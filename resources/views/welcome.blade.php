@@ -1,4 +1,4 @@
 <x-layout>
     
- {{-- <x-navabar></x-navabar> --}}
+ <x-navbar></x-navbar>
 </x-layout>

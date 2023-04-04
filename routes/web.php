@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PublicController;
+use App\Http\Controllers\AnnouncementController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,6 @@ use App\Http\Controllers\PublicController;
 
 // Rotta PublicController
 Route::get('/', [PublicController::class, 'home'])->name('home');
+
+// Rotta AnnouncementController
+Route::get('/new/announcement', [AnnouncementController::class, 'create'])->name('announcements.create');

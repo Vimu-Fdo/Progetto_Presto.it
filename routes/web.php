@@ -19,4 +19,4 @@ use App\Http\Controllers\AnnouncementController;
 Route::get('/', [PublicController::class, 'home'])->name('home');
 
 // Rotta AnnouncementController
-Route::get('/new/announcement', [AnnouncementController::class, 'create'])->name('announcements.create');
+Route::get('/new/announcement', [AnnouncementController::class, 'create'])->middleware('auth')->name('announcements.create');

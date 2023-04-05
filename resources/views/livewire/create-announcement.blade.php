@@ -25,7 +25,7 @@
             
                     <!-- Body Input -->
                     <div class="form-floating mb-3">
-                        <textarea wire:model.debounce.3000ms="body" class="form-control @error('body') is-invalid @enderror" name="body" id="body" type="text" placeholder="Description" style="height: 10rem;"></textarea>
+                        <textarea wire:model.debounce.500ms="body" class="form-control @error('body') is-invalid @enderror" name="body" id="body" type="text" placeholder="Description" style="height: 10rem;"></textarea>
                         <label for="body">Description</label>
                         @error('body')
                             <span class="text-danger text-sm">{{ $message }}</span> 
@@ -41,7 +41,7 @@
                         @enderror
                     
                         <div class="form-floating mb-3">
-                            <select wire::model.defer="category"
+                            <select wire:model.defer="category"
                             class="form-select @error('category_id') is-invalid @enderror" 
                             {{-- name="category_id" --}}
                             id="category"

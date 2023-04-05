@@ -10,12 +10,13 @@
                 <li class="nav-item"><a class="nav-link" href="{{ route('announcements.create') }}">Nuovo annuncio</a></li>
                 @endauth
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Serie Tv
+                  <a class="nav-link dropdown-toggle" href="#" role="button" id="categoriesDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                Categorie annunci
                   </a>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Mostra tutte</a></li>
-                <li><a class="dropdown-item" href="#">Inserisci serie tv</a></li>
+              @foreach ($categories as $category)
+                <li><a class="dropdown-item" href="{{ route('categories.show', compact('category')) }}">{{ $category->name }}</a></li>
+              @endforeach
             </ul>
                 </li>
                 <li class="nav-item dropdown text-white-50">

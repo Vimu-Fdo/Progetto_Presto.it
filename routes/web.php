@@ -17,6 +17,7 @@ use App\Http\Controllers\AnnouncementController;
 
 // Rotta PublicController
 Route::get('/', [PublicController::class, 'home'])->name('home');
+Route::get('/categories/{category}', [PublicController::class, 'categoryShow'])->name('categories.show');
 
 // Rotta AnnouncementController
 Route::get('/new/announcement', [AnnouncementController::class, 'create'])->middleware('auth')->name('announcements.create');

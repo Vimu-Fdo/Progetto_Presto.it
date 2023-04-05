@@ -1,6 +1,6 @@
 <x-layout>
     <x-navbar/>
-    <div class="container">
+    <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-12 col-md-8 col-lg-6 text-center my-5">
                 <h1 class="display-4 mt-3">Registrati</h1>
@@ -38,7 +38,7 @@
                     <label for="name">Password Confirmation</label>
                 </div>
                 <div class="mt-5">
-                <button class="btn btn-success" type="submit">Registrati</button>
+                <button class="button-181" type="submit">Registrati</button>
                 </div>
             </form>
         </div>

@@ -1,22 +1,24 @@
 <x-layout>
 <x-navbar></x-navbar>
-<div class="container">
-    <div class="row">
-        @foreach ($announcements as $announcement)
-        <div class="col-12 col-md-4 my-4">
-            <div class="card" style="width: 18rem;">
-                <img src="https://picsum.photos/200/300" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">{{ $announcement->title }}</h5>
-                  <p class="card-text">{{ $announcement->body }}</p>
-                  <p class="card-text">{{ $announcement->price }}</p>
-                  <a href="{{ route('announcements.show', compact('announcement')) }}" class="btn btn-primary">Visualizza</a>
-                  <a href="#" class="btn btn-primary">Categoria: {{ $announcement->category->name }}</a>
-                  <a class="card-footer">Pubblicato il: {{ date_format($announcement->created_at, 'd/m/Y H:i') }}</a>
-                </div>
-              </div>
+<div class='container pad'>
+  <div class="row">
+    @foreach ($announcements as $announcement)
+    <div class="card mx-auto col-md-3 col-10 px-4 mt-5">
+        <img class='mx-auto img-thumbnail'
+            src="https://picsum.photos/200/300"
+            width="auto" height="auto"/>
+        <div class="card-body text-center mx-auto">
+            <div class='cvp'>
+                <h5 class="card-title font-weight-bold">{{ $announcement->title }}</h5>
+                <p class="card-text">{{ $announcement->price }}</p>
+                <p class="card-text">{{ $announcement->body }}</p>
+                <button class="button-18 mt-2" role="button"><a href="{{ route('announcements.show', compact('announcement')) }}" class="button-18 text-white text-decoration-none">Visualizza</a></button><br />
+                <button class="button-181 mt-2" role="button"><a href="#"class="text-white text-decoration-none ">Categoria: {{ $announcement->category->name }}</a></button>
+                <p class="text-black text-decoration-none mt-2 p-3">Pubblicato il: {{ date_format($announcement->created_at, 'd/m/Y H:i')}}</p>
+            </div>
         </div>
-        @endforeach
     </div>
+    @endforeach
+  </div>
 </div>
 </x-layout>

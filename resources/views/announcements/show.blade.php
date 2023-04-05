@@ -1,9 +1,9 @@
 <x-layout>
     <x-navbar></x-navbar>
-    <div class="container">
-        <div class="row">
+    <div class="container py-5">
+        <div class="row justify-content-center ">
         <h1 class="my-4 mt-5"> Annuncio {{$announcement->title}}</h1>
-        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div id="carouselExampleControls" class="carousel carouselD slide py-4 " data-bs-ride="carousel" >
             <div class="carousel-inner">
               <div class="carousel-item active">
                 <img src="https://picsum.photos/200/300" class="d-block w-100" alt="...">
@@ -27,10 +27,11 @@
           <h5 class="card-title">{{ $announcement->title }}</h5>
           <p class="card-text">{{ $announcement->body }}</p>
           <p class="card-text">{{ $announcement->price }}</p>
-          <a href="{{ route('categories.show',['category'=>$announcement->category]) }}" class="my-2 border-top pt-2 border-dark card-link shadow btn btn-success">categoria: {{ $announcement->category->name }}</a>
-          <a class="card-footer">Pubblicato il: {{ $announcement->created_at->format('d/m/Y') }}</a>
+          <button class="button-18" role="button"><a href="{{ route('categories.show',['category'=>$announcement->category]) }}"class="text-white text-decoration-none">categoria: {{ $announcement->category->name }}</a></button>
+          <p class="card-footer text-decoration-none">Pubblicato il: {{ $announcement->created_at->format('d/m/Y') }}</p>
           </div>
         </div>
     </div>
-
+     
 </x-layout>
+

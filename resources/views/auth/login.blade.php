@@ -1,7 +1,7 @@
 <x-layout>
     <x-navbar></x-navbar>
         @if ($errors->any())
-            <div class="alert alert-danger">
+            <div class="alert alert-danger my-5">
                 <ul>
                     @foreach ($errors->all() as $error)
                         <li>{{ $error }}</li>
@@ -9,7 +9,7 @@
                 </ul>
             </div>
         @endif
-        <div class="container">
+        <div class="container mt-5">
                 <div class="row justify-content-center">
                     <div class="col-12 col-md-8 col-lg-6 text-center my-5">
                         <h1 class="display-4 mt-3">Login</h1>
@@ -28,7 +28,7 @@
                             <label for="name">Password</label>
                         </div>
                         <div class="mt-5">
-                            <button class="btn btn-success" type="submit">Accedi</button>
+                            <button class="button-18" type="submit">Accedi</button>
                         </div>
                     </form>
                 </div>

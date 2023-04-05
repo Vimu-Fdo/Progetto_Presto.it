@@ -17,8 +17,9 @@
                 <div class="card-body text-center mx-auto">
                     <div class='cvp'>
                         <h5 class="card-title font-weight-bold">{{ $announcement->title }}</h5>
-                        <p class="card-text">{{ $announcement->price }}</p>
-                        <p class="card-text">{{ $announcement->body }}</p>
+                        <p class="card-text">€ {{ $announcement->price }}</p>
+                        <p class="card-text"> Descrizione{{ $announcement->body }}</p>
+                        <p class="card-text"> User: {{ $announcement->user->name }}</p>
                         <a href="{{ route('announcements.show', compact('announcement')) }}" class="btn details px-auto">Visualizza</a><br />
                         <a href="#" class="btn cart px-auto">Categoria: {{ $announcement->category->name }}</a>
                         <a class="btn p-auto">Pubblicato il: {{ date_format($announcement->created_at, 'd/m/Y H:i')}}</a>
@@ -35,7 +36,14 @@
 </div>
 </x-layout>
 
-<!-- HTML !-->
+{{--
+@forelse 
+Abbiamo inserito un @forelse per ciclare tutti gli annunci della categoria selezionata. 
+A differenza del @foreach, il @forelse ci permette di gestire il caso in cui la categoria non abbia annunci. In questo caso, stampiamo un messaggio di errore e un pulsante per creare un nuovo annuncio.   
+
+dta_format
+Abbiamo inserito un data_format per stampare la data di creazione dell'annuncio e l'ora.
+--}}
 
 
 

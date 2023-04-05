@@ -9,6 +9,9 @@ class AnnouncementController extends Controller
 {
     /**
      * Display a listing of the resource.
+     * Abbiamo inserito la funzione indexAnnouncement per mostrare tutti gli annunci.
+     * Abbiamo inserito la orderBy per mostrare gli annunci in ordine decrescente.
+     * Abbiamo inserito la paginate per mostrare 6 annunci per pagina dopodiche si passa alla pagina successiva.
      */
     public function indexAnnouncement()
     {

@@ -27,6 +27,7 @@
           <h5 class="card-title">{{ $announcement->title }}</h5>
           <p class="card-text">{{ $announcement->body }}</p>
           <p class="card-text">{{ $announcement->price }}</p>
+          <p class="card-text">{{ $announcement->user->name }}</p>
           <button class="button-18" role="button"><a href="{{ route('categories.show',['category'=>$announcement->category]) }}"class="text-white text-decoration-none">categoria: {{ $announcement->category->name }}</a></button>
           <p class="card-footer text-decoration-none">Pubblicato il: {{ $announcement->created_at->format('d/m/Y') }}</p>
           </div>

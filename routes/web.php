@@ -16,15 +16,16 @@ use App\Http\Controllers\AnnouncementController;
 */
 
 // Rotta PublicController
+// Rotta per la visualizzazione della welcome page
 Route::get('/', [PublicController::class, 'home'])->name('home');
+// Rotta per la visualizzazione della pagina di dettaglio categoria
 Route::get('/categories/{category}', [PublicController::class, 'categoryShow'])->name('categories.show');
 
 // Rotta AnnouncementController
+// Rotta per la visualizzazione della pagina di creazione di un nuovo annuncio
 Route::get('/new/announcement', [AnnouncementController::class, 'create'])->middleware('auth')->name('announcements.create');
-
-// Rotta per visualizzazione dettaglio annuncio
+// Rotta per la visualizzazione della pagina di dettaglio di un annuncio
 Route::get('/show/announcement/{announcement}',[AnnouncementController::class, 'showAnnouncement'])->name('announcements.show');
-
-// Rotta tutti gli annunci
+// Rotta per la visualizzazione della pagina di tutti gli annunci
 Route::get('/index/announcement', [AnnouncementController::class, 'indexAnnouncement'])->name('announcement.index');
 

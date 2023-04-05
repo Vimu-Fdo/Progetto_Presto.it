@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class PublicController extends Controller
 {
     public function home() {
-        $announcements = Announcement::orderBy('created_at' , 'desc')->take(6)->get();/* take(6)->get()->orderBy('created_at'); */
+        $announcements = Announcement::orderBy('created_at' , 'desc')->take(6)->get();
        
         return view('welcome', compact('announcements'));
     }
@@ -18,3 +18,7 @@ class PublicController extends Controller
        return view('categories', compact('category'));
     }
 }
+
+// Abbiamo inserito la funzione home per mostrare la welcome page.
+// Abbiamo inserito orderBy per mostrare gli annunci in ordine decrescente.
+// Abbiamo inserito take per mostrare solo 6 annunci.

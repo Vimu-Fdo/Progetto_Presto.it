@@ -10,10 +10,11 @@
         <div class="card-body text-center mx-auto">
             <div class='cvp'>
                 <h5 class="card-title font-weight-bold">{{ $announcement->title }}</h5>
-                <p class="card-text">{{ $announcement->price }}</p>
-                <p class="card-text">{{ $announcement->body }}</p>
+                <p class="card-text">€ {{ $announcement->price }}</p>
+                <p class="card-text">Descrizione: {{ $announcement->body }}</p>
+                <p class="card-text"> User: {{ $announcement->user->name }}</p>
                 <button class="button-18 mt-2" role="button"><a href="{{ route('announcements.show', compact('announcement')) }}" class="button-18 text-white text-decoration-none">Visualizza</a></button><br />
-                <button class="button-181 mt-2" role="button"><a href="#"class="text-white text-decoration-none ">Categoria: {{ $announcement->category->name }}</a></button>
+                <button class="button-181 mt-2" role="button"><a href="{{ route('categories.show',['category'=>$announcement->category]) }}"class="text-white text-decoration-none ">Categoria: {{ $announcement->category->name }}</a></button>
                 <p class="text-black text-decoration-none mt-2 p-3">Pubblicato il: {{ date_format($announcement->created_at, 'd/m/Y H:i')}}</p>
             </div>
         </div>
@@ -22,3 +23,12 @@
   </div>
 </div>
 </x-layout>
+
+
+{{-- 
+@foreach
+Abbiamo inserito un @foreach per ciclare gli annunci e stamparli a schermo. Abbiamo impostato un masssimo di 6 annunci per la pagina welcome.
+
+Date_format
+Abbiamo utilizzato la funzione date_format per stampare la data di creazione dell'annuncio e l'ora di creazione.
+  --}}

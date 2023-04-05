@@ -16,3 +16,6 @@ class Category extends Model
         return $this->hasMany(Announcement::class);
     }
 }
+
+// Abbiamo inserito protected $fillable per indicare i campi che possono essere inseriti nel database da parte dell'utente.
+// Abbiamo inserito la funzione announcements per indicare che una categoria ha molti annunci usando hasMany.

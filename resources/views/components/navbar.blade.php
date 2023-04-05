@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bgN fixed-top" id="mainNav">
     <div class="container px-4">
-        <a class="navbar-brand" href="{{ route('home') }}">Start Bootstrap</a>
+        <a class="navbar-brand" href="{{ route('home') }}">Presto.it</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ms-auto">
@@ -45,3 +45,23 @@
     </div>
 </nav>
 {{ $slot }}
+
+{{--
+@auth e middleware 
+Abbiamo inserito un @auth per verificare se l'utente è loggato puoi accedere alla pagina di creazione di un nuovo annuncio.
+Abbiamo inserito anche un middleware per una questione di sicurezza cosi da non permettere l'accesso tramite url alla pagina di creazione di un nuovo annuncio. 
+
+Categorie dropdown
+Abbiamo inserito un dropdown per le categorie degli annunci. Abbiamo utilizzato un @foreach per ciclare le categorie e stamparle a schermo.
+
+Login / Register
+Abbiamo inserito un dropdown per il login e la registrazione. Abbiamo utilizzato un @auth per verificare se l'utente è loggato e stampare a schermo il suo nome. Se l'utente non è loggato verrà mostrato il link per il login e la registrazione.
+
+Register
+Appena l'utente si registra verrà reindirizzato alla pagina di inserimento di un nuovo annuncio.
+
+@csrf
+Abbiamo utilizzato la funzione @csrf per proteggere il nostro form dal CSRF (Cross-Site Request Forgery).
+
+
+  --}}

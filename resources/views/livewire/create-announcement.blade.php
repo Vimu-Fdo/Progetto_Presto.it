@@ -40,7 +40,7 @@
                             <span class="text-danger text-sm">{{ $message }}</span> 
                         @enderror
                     
-                        <div class="form-floating mb-3">
+                        <div class="form-floating mt-3">
                             <select wire:model.defer="category"
                             class="form-select @error('category_id') is-invalid @enderror" 
                             {{-- name="category_id" --}}
@@ -56,8 +56,8 @@
             
             
                     <!-- Submit button -->
-                    <div class="d-grid py-3">
-                        <button class="btn btn-primary btn-lg" id="submitButton" type="submit">Submit</button>
+                    <div class="d-grid py-3 justify-content-center">
+                        <button class="button-18" id="submitButton" type="submit">Crea Annuncio</button>
                     </div>
                 </form>
                 {{-- @else --}}

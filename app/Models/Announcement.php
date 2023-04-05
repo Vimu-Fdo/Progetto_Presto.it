@@ -25,3 +25,8 @@ class Announcement extends Model
         return $this->belongsTo(User::class);
     }
 }
+
+// Abbiamo inserito protected $fillable per indicare i campi che possono essere inseriti nel database da parte dell'utente.
+// Abbiamo inserito la funzione category per indicare che un annuncio appartiene ad una categoria usansando belongsTo.
+// Abbiamo inserito la funzione user per indicare che un annuncio appartiene ad un utente usansando belongsTo.
+// 

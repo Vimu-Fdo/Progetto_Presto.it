@@ -39,6 +39,20 @@
                         @error('price')
                             <span class="text-danger text-sm">{{ $message }}</span> 
                         @enderror
+                    
+                        <div class="form-floating mb-3">
+                            <select wire::model.defer="category"
+                            class="form-select @error('category_id') is-invalid @enderror" 
+                            {{-- name="category_id" --}}
+                            id="category"
+                            aria-label="Floating label select example">
+                            <option selected disabled>Open this select menu</option>
+                            @foreach($categories as $category)
+                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                            @endforeach
+                            </select>
+                               <label for="category">User name</label>
+                            </div>
             
             
                     <!-- Submit button -->

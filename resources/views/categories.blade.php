@@ -26,7 +26,7 @@
             @empty
             <div class="col-12">
                 <h2 class="text-center my-4">Non ci sono annunci in questa categoria</h2>
-                <p Pubblica il tuo annuncio <a href="{{ route('announcements.create') }}">cliccando qui</a></p>
+                <a href="{{ route('announcements.create') }}" class="btn btn-primary">Crea un nuovo annuncio</a>
         </div>
             @endforelse
     </div>

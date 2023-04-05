@@ -21,3 +21,10 @@ Route::get('/categories/{category}', [PublicController::class, 'categoryShow'])-
 
 // Rotta AnnouncementController
 Route::get('/new/announcement', [AnnouncementController::class, 'create'])->middleware('auth')->name('announcements.create');
+
+// Rotta per visualizzazione dettaglio annuncio
+Route::get('/show/announcement/{announcement}',[AnnouncementController::class, 'showAnnouncement'])->name('announcements.show');
+
+// Rotta tutti gli annunci
+Route::get('/index/announcement', [AnnouncementController::class, 'indexAnnouncement'])->name('announcement.index');
+

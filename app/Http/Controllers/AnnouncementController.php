@@ -10,9 +10,10 @@ class AnnouncementController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function indexAnnouncement()
     {
-        //
+        $announcements=Announcement::paginate(5);
+        return view('announcements.index' , compact('announcements'));
     }
 
     /**
@@ -34,9 +35,10 @@ class AnnouncementController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Announcement $announcement)
+    public function showAnnouncement(Announcement $announcement)
     {
-        //
+        
+     return view('announcements.show', compact('announcement'));
     }
 
     /**

@@ -2,6 +2,11 @@
 <x-navbar></x-navbar>
 <div class='container pad'>
   <div class="row">
+    @if (session('access_denied'))
+        <div class="alert alert-danger">
+           {{ session('access_denied') }}
+        </div>
+    @endif
     @foreach ($announcements as $announcement)
     <div class="card mx-auto col-md-3 col-10 px-4 mt-5">
         <img class='mx-auto img-thumbnail'
@@ -22,6 +27,7 @@
     @endforeach
   </div>
 </div>
+<x-footer></x-footer>
 </x-layout>
 
 

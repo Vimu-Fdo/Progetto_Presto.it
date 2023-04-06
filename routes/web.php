@@ -30,6 +30,17 @@ Route::get('/show/announcement/{announcement}',[AnnouncementController::class, '
 // Rotta per la visualizzazione della pagina di tutti gli annunci
 Route::get('/index/announcement', [AnnouncementController::class, 'indexAnnouncement'])->name('announcement.index');
 
+// Rotta RevisorController
 // Home Revisore
-Route::get('/revisor/home', [RevisorController::class, 'index'])->name('revisor.index');
+Route::get('/revisor/home', [RevisorController::class, 'index'])->middleware('isRevisor')->name('revisor.index');
+// Accetta Annuncio
+// Abbiamo usato il metodo patch perche' non e' una modifica ma un aggiornamento
+Route::patch('/accept/announcement/{announcement}', [RevisorController::class, 'acceptAnnouncement'])->name('revisor.accept_announcement');
+// Rifiuta Annuncio
+// Abbiamo usato il metodo patch perche' non e' una modifica ma un aggiornamento
+Route::patch('/reject/announcement/{announcement}', [RevisorController::class, 'rejectAnnouncement'])->name('revisor.reject_announcement');
+// Rotta per diventare revisore
+Route::get('/become/revisor', [RevisorController::class, 'becomeRevisor'])->middleware('auth')->name('become.revisor');
+// Rendi utente revisore
+Route::patch('/make/revisor/{user}', [RevisorController::class, 'makeRevisor'])->name('make.revisor');
 

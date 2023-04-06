@@ -167,3 +167,13 @@
     height: 500px;
     
 }
+
+/* Footer */
+
+.footer {
+    background-color: #141414;
+    color: #F0F0F0;
+    height: 20vh;
+    padding: 20px;
+    text-align: center;
+}

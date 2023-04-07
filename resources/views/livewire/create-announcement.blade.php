@@ -9,14 +9,14 @@
                     </div>
                 @endif
                 
-                {{-- @if(!$article) --}}
+        
                 <form id="contactForm" wire:submit.prevent="store" >
                     @csrf
                     
                     <!-- Title Input -->
                     <div class="form-floating mb-3">
                         <input wire:model.debounce.500ms="title" class="form-control @error('title') is-invalid @enderror" name="title" id="title" type="text" placeholder="Title"/>
-                        <label for="title">Title</label>
+                        <label for="title">Titolo</label>
                         @error('title')
                             <span class="text-danger text-sm">{{ $message }}</span> 
                         @enderror
@@ -26,7 +26,7 @@
                     <!-- Body Input -->
                     <div class="form-floating mb-3">
                         <textarea wire:model.debounce.500ms="body" class="form-control @error('body') is-invalid @enderror" name="body" id="body" type="text" placeholder="Description" style="height: 10rem;"></textarea>
-                        <label for="body">Description</label>
+                        <label for="body">Descrizione</label>
                         @error('body')
                             <span class="text-danger text-sm">{{ $message }}</span> 
                         @enderror
@@ -35,7 +35,7 @@
                     <!-- Price Input -->
                     <div class="form-floating mb-3">
                         <input wire:model.debounce.500ms="price" class="form-control @error('price') is-invalid @enderror" name="price" id="price" type="text" placeholder="Price"/>
-                        <label for="price">Price</label>
+                        <label for="price">Prezzo</label>
                         @error('price')
                             <span class="text-danger text-sm">{{ $message }}</span> 
                         @enderror
@@ -46,12 +46,12 @@
                             {{-- name="category_id" --}}
                             id="category"
                             aria-label="Floating label select example">
-                            <option selected disabled>Open this select menu</option>
+                            <option selected>Apri il menu</option>
                             @foreach($categories as $category)
                             <option value="{{ $category->id }}">{{ $category->name }}</option>
                             @endforeach
                             </select>
-                               <label for="category">User name</label>
+                               <label for="category">Scegli la categoria</label>
                             </div>
             
             

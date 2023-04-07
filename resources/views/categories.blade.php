@@ -3,7 +3,7 @@
 <div class="container fluid my-5">
     <div class="row">
         <div class="col-12 py-5">
-            <h1 class="text-center my-4">Esplora la categoria {{ $category->name }}</h1>
+            <h1 class="text-center my-4">Esplora la categoria: <span class="fw-light">{{ $category->name }}</span></h1>
         </div>
     </div>
 </div>
@@ -27,10 +27,14 @@
                 </div>
             </div>
             @empty
-            <div class="col-12">
-                <h2 class="text-center my-4">Non ci sono annunci in questa categoria</h2>
-                <button class="button-18" role="button"><a href="{{ route('announcements.create') }}" class="button-18 text-decoration-none">Crea un nuovo annuncio</a></button>
-        </div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-8">
+                        <h2 class="text-center my-4">Non ci sono annunci in questa categoria</h2>
+                        <button class="button-18" role="button" href="{{ route('announcements.create') }}" class="button-18 text-decoration-none">Crea un nuovo annuncio</a></button>
+                    </div>
+                </div>
+            </div>
             @endforelse
     </div>
 </div>

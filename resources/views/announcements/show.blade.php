@@ -1,38 +1,163 @@
 <x-layout>
     <x-navbar></x-navbar>
-    <div class="container py-5">
-        <div class="row justify-content-center ">
-        <h1 class="my-4 mt-5"> Annuncio {{$announcement->title}}</h1>
-        <div id="carouselExampleControls" class="carousel carouselD slide py-4 " data-bs-ride="carousel" >
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="https://picsum.photos/200/300" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="https://picsum.photos/200/300" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="https://picsum.photos/200/300" class="d-block w-100" alt="...">
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
-          <h5 class="card-title">{{ $announcement->title }}</h5>
-          <p class="card-text">{{ $announcement->body }}</p>
-          <p class="card-text">{{ $announcement->price }}</p>
-          <p class="card-text">{{ $announcement->user->name }}</p>
-          <button class="button-18" role="button"><a href="{{ route('categories.show',['category'=>$announcement->category]) }}"class="text-white text-decoration-none">categoria: {{ $announcement->category->name }}</a></button>
-          <p class="card-footer text-decoration-none">Pubblicato il: {{ $announcement->created_at->format('d/m/Y') }}</p>
-          </div>
-        </div>
+<!-- Page Content -->
+<div class="container show_announ">
+  <div class="row h-100 align-items-center">
+  <!-- Portfolio Item Heading -->
+  <h1 class="my-5">{{$announcement->title}}</h1>
+
+  <!-- Portfolio Item Row -->
+  
+
+    <div class="col-md-8">
+      <img class="img-fluid" src="https://www.typingpal.com/images/1/3/a/8/4/13a845e178cb05ecc149ffc850ad9a6eac19f85d-lorem-ipsum.png" alt="">
     </div>
+
+    <div class="col-md-4">
+      <h3 class="my-3">Descrizione prodotto</h3>
+      <p>{{ $announcement->body }}</p>
+      <h3 class="my-3">Dettagli Articolo</h3>
+      <ul>
+        <li>€ {{ $announcement->price }}</li>
+        <li>Inserito da: {{ $announcement->user->name }}</li>
+        <li>Pubblicato il: {{ $announcement->created_at->format('d/m/Y') }}</li>
+      </ul>
+    </div>
+
+  </div>
+  <!-- /.row -->
+
+  <!-- Related Projects Row -->
+  <h3 class="my-4">Immagini prodotto</h3>
+
+  <div class="row">
+
+    <div class="col-md-3 col-sm-6 mb-4">
+      <a href="#">
+            <img class="img-fluid" src="https://picsum.photos/200/300" alt="">
+          </a>
+    </div>
+
+    <div class="col-md-3 col-sm-6 mb-4">
+      <a href="#">
+            <img class="img-fluid" src="https://picsum.photos/200/300" alt="">
+          </a>
+    </div>
+
+    <div class="col-md-3 col-sm-6 mb-4">
+      <a href="#">
+            <img class="img-fluid" src="https://picsum.photos/200/300" alt="">
+          </a>
+    </div>
+
+    <div class="col-md-3 col-sm-6 mb-4">
+      <a href="#">
+            <img class="img-fluid" src="https://picsum.photos/200/300" alt="">
+          </a>
+    </div>
+
+  </div>
+ 
+
+</div>
      
 </x-layout>
 
+<!-- Page Content -->
+{{-- <div class="container">
+
+  <!-- Portfolio Item Heading -->
+  <h1 class="my-4">{{$announcement->title}}</h1>
+
+  <!-- Portfolio Item Row -->
+  <div class="row">
+
+    <div class="col-md-8">
+      <img class="img-fluid" src="https://picsum.photos/200/300" alt="">
+    </div>
+
+    <div class="col-md-4">
+      <h3 class="my-3">Descrizione prodotto</h3>
+      <p>{{ $announcement->body }}</p>
+      <h3 class="my-3">Dettagli Articolo</h3>
+      <ul>
+        <li>€ {{ $announcement->price }}</li>
+        <li>Inserito da: {{ $announcement->user->name }}</li>
+        <li>Pubblicato il: {{ $announcement->created_at->format('d/m/Y') }}</li>
+      </ul>
+    </div>
+
+  </div>
+  <!-- /.row -->
+
+  <!-- Related Projects Row -->
+  <h3 class="my-4">Related Projects</h3>
+
+  <div class="row">
+
+    <div class="col-md-3 col-sm-6 mb-4">
+      <a href="#">
+            <img class="img-fluid" src="https://picsum.photos/200/300" alt="">
+          </a>
+    </div>
+
+    <div class="col-md-3 col-sm-6 mb-4">
+      <a href="#">
+            <img class="img-fluid" src="https://picsum.photos/200/300" alt="">
+          </a>
+    </div>
+
+    <div class="col-md-3 col-sm-6 mb-4">
+      <a href="#">
+            <img class="img-fluid" src="https://picsum.photos/200/300" alt="">
+          </a>
+    </div>
+
+    <div class="col-md-3 col-sm-6 mb-4">
+      <a href="#">
+            <img class="img-fluid" src="https://picsum.photos/200/300" alt="">
+          </a>
+    </div>
+
+  </div>
+ 
+
+</div> --}}
+
+
+
+
+{{-- <div class="container py-5">
+  <div class="row justify-content-center ">
+  <h1 class="my-4 mt-5"> Annuncio {{$announcement->title}}</h1>
+  <div id="carouselExampleControls" class="carousel carouselD slide py-4 " data-bs-ride="carousel" >
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://picsum.photos/200/300" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="https://picsum.photos/200/300" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="https://picsum.photos/200/300" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <h5 class="card-title">{{ $announcement->title }}</h5>
+    <p class="card-text">{{ $announcement->body }}</p>
+    <p class="card-text">{{ $announcement->price }}</p>
+    <p class="card-text">{{ $announcement->user->name }}</p>
+    <button class="button-18" role="button"><a href="{{ route('categories.show',['category'=>$announcement->category]) }}"class="text-white text-decoration-none">categoria: {{ $announcement->category->name }}</a></button>
+    <p class="card-footer text-decoration-none">Pubblicato il: {{ $announcement->created_at->format('d/m/Y') }}</p>
+    </div>
+  </div>
+</div>
+ --}}

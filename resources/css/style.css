@@ -168,6 +168,22 @@
     
 }
 
+/* Show Announcements */
+.show_announ{
+  height: 100vh;
+}
+
+/* Index Announcements */
+.index_announc{
+
+  height: 70vh;
+}
+
+.index_announc_title{
+  height: 40vh;
+}
+
+
 /* Footer */
 
 .footer {

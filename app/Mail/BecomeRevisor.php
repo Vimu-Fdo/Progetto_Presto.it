@@ -24,7 +24,7 @@ class BecomeRevisor extends Mailable
 
     public function build(){
 
-        return $this->form('presto.it@noreply.com')->view('mail.become.revisor');
+        return $this->form('presto.it@noreply.com')->view('mail.become_revisor');
             
     }
 

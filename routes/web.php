@@ -40,7 +40,7 @@ Route::patch('/accept/announcement/{announcement}', [RevisorController::class, '
 // Abbiamo usato il metodo patch perche' non e' una modifica ma un aggiornamento
 Route::patch('/reject/announcement/{announcement}', [RevisorController::class, 'rejectAnnouncement'])->name('revisor.reject_announcement');
 // Rotta per diventare revisore
-Route::get('/become/revisor', [RevisorController::class, 'becomeRevisor'])->middleware('auth')->name('become.revisor');
+Route::get('/richiesta/revisore', [RevisorController::class, 'becomeRevisor'])->middleware('auth')->name('become.revisor');
 // Rendi utente revisore
-Route::patch('/make/revisor/{user}', [RevisorController::class, 'makeRevisor'])->name('make.revisor');
+Route::patch('/rendi/revisore/{user}', [RevisorController::class, 'makeRevisor'])->name('make.revisor');
 

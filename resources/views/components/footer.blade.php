@@ -1,3 +1,4 @@
+{{ $slot }}
 <footer class="footer text-center">
     <div class="container">
         <div class="row">
@@ -22,9 +23,10 @@
             <div class="col-lg-4">
                 <h4 class="text-uppercase mb-4">Lavora con noi</h4>
                 <p class="lead mb-0">Registrati cliccando qui</p>
-                <button href="{{route('become.revisor')}}" class="button-18">Diventa revisore</button>
+                <a href="{{ route('become.revisor') }}">Diventa revisore</a>
+                <button href="{{ route('become.revisor') }}" class="button-18">Diventa revisore</button>
+                
             </div>
         </div>
     </div>
 </footer>
-{{ $slot }}

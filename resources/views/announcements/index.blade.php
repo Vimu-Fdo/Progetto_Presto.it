@@ -2,7 +2,7 @@
     <x-navbar></x-navbar>
     <div class='container pad'>
         <div class="row">
-          @foreach ($announcements as $announcement)
+          @forelse ($announcements as $announcement)
           <div class="card mx-auto col-md-3 col-10 px-4 mt-5">
               <img class='mx-auto img-thumbnail' src="https://picsum.photos/200/300" width="auto" height="auto"/>
               <div class="card-body text-center mx-auto">
@@ -17,7 +17,15 @@
                   </div>
               </div>
           </div>
-          @endforeach
+          @empty
+           <div class="col-12">
+              <div class="alert alert-warning py-3 shadow">
+                <p class="lead">Non ci sono annunci per questa ricerca</p>
+              </div>
+            </div>   
+
+          
+          @endforelse
           <div class="py-4">
             {{ $announcements->links() }} {{-- paginazione --}}
           </div>

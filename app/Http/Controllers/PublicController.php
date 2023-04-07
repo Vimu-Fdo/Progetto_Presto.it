@@ -17,6 +17,12 @@ class PublicController extends Controller
     public function categoryShow(Category $category) {
        return view('categories', compact('category'));
     }
+
+    public function searchAnnouncements(Request $request){
+        $announcements = Announcement::search($request->searched)->where('is_accepted', true)->paginate(10);
+        return view('announcements.index', compact('announcements'));
+
+    }
 }
 
 // Abbiamo inserito la funzione home per mostrare la welcome page.

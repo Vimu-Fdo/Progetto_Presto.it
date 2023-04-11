@@ -47,8 +47,8 @@
           </div>
         </div>
       </div>
-      
-    </x-layout>
+  <x-footer></x-footer>    
+</x-layout>
     
 
     {{--    @if ($errors->any())

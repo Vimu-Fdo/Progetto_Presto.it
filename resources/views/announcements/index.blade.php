@@ -1,6 +1,6 @@
 <x-layout>
   <x-navbar></x-navbar>
-    <div class="container index_announc_title">
+    <div class="container-fluid index_announc_title">
       <div class="row align-content-center my-5 h-100">
         <div class="col-12">
           <h1 class="text-center">Tutti gli annunci</h1>
@@ -35,9 +35,11 @@
       @endforelse
       <div class="py-4">
         {{ $announcements->links() }} {{-- paginazione --}}
-      </div>  
+      </div> 
+    <div>
+      <x-footer></x-footer>
+    </div>
   </div>
-  
 </x-layout>
 
     

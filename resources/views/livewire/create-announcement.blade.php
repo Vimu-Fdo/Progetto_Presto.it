@@ -1,7 +1,5 @@
-
 <x-layout>
-  <x-navbar/>
-
+<x-navbar/>
 <div class="container px-5 my-5 py-5">
     <div class="row justify-content-center">
       <div class="col-lg-8">
@@ -27,7 +25,7 @@
                 @enderror
               </div>
   
-              <!-- Email Input -->
+              <!-- Descripition input -->
               <div class="form-floating mb-3">
                 <textarea wire:model.debounce.500ms="body" class="form-control @error('body') is-invalid @enderror" name="body" id="body" type="text" placeholder="Description" style="height: 10rem;"></textarea>
                         <label for="body">Descrizione</label>
@@ -36,7 +34,7 @@
                         @enderror
               </div>
   
-              <!-- Message Input -->
+              <!-- Price Input -->
               <div class="form-floating mb-3">
                 <input wire:model.debounce.500ms="price" class="form-control @error('price') is-invalid @enderror" name="price" id="price" type="text" placeholder="Price"/>
                 <label for="price">Prezzo</label>
@@ -79,7 +77,6 @@
       </div>
     </div>
   </div>
-
 </x-layout>
 
 

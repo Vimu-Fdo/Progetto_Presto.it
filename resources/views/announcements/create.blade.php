@@ -9,7 +9,6 @@
         </div>
 
     </div>
-    
+<x-footer/>    
 </x-layout>
 
-<x-footer/>

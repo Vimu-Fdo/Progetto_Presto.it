@@ -37,6 +37,7 @@
       {{ $announcements->links() }} {{-- paginazione --}}
     </div>  
 </div>
+
 </x-layout>
     
     

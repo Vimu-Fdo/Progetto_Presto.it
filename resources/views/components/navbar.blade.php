@@ -5,9 +5,9 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ route('announcement.index') }}">Tutti gli annunci</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('announcement.index') }}">Annunci</a></li>
                 @auth
-                <li class="nav-item"><a class="nav-link" href="{{ route('announcements.create') }}">Nuovo annuncio</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('announcements.create') }}">Crea annuncio</a></li>
                 @endauth
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" role="button" id="categoriesDropdown" data-bs-toggle="dropdown" aria-expanded="false">

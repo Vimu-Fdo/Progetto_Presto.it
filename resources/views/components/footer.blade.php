@@ -23,9 +23,9 @@
             <div class="col-lg-4">
                 <h4 class="text-uppercase mb-4">Lavora con noi</h4>
                 <p class="lead mb-0">Registrati cliccando qui</p>
-                <a href="{{ route('become.revisor') }}">Diventa revisore</a>
-                <button href="{{ route('become.revisor') }}" class="button-18">Diventa revisore</button>
+                {{-- <a href="{{ route('become.revisor') }}">Diventa revisore</a> --}}
                 
+                <button class="button-18 mt-3" role="button" ><a href="{{ route('become.revisor') }}" class="text-white text-decoration-none ">Diventa revisore</a></button>
             </div>
         </div>
     </div>

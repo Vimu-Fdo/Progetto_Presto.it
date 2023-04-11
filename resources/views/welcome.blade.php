@@ -7,10 +7,22 @@
            {{ session('access_denied') }}
         </div>
     @endif
+    {{-- Header --}}
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <div class="box1"></div>
+        </div>
+        <div class="col-12 col-md-6">
+          
+        </div>
+      </div>
+    </div>
+    {{-- Fine Header --}}
     @foreach ($announcements as $announcement)
-    <div class="card mx-auto col-md-3 col-10 px-4 mt-5">
+    <div class="card mx-auto col-md-3 col-10 px-4 my-4">
         <img class='mx-auto img-thumbnail'
-            src="https://picsum.photos/200/300"
+            src="https://picsum.photos/200/200"
             width="auto" height="auto"/>
         <div class="card-body text-center mx-auto">
             <div class='cvp'>
@@ -27,7 +39,7 @@
     @endforeach
   </div>
 </div>
-
+<x-footer/>
 </x-layout>
 
 

@@ -26,9 +26,9 @@
 
   </div>
   <!-- /.row -->
-  <h3 class="my-4 text-center">Immagini prodotto</h3>
+  {{-- <h3 class="my-4 text-center">Immagini prodotto</h3> --}}
   
-  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+  {{-- <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -62,10 +62,10 @@
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
-  </div>
+  </div> --}}
 
   <!-- Related Projects Row -->
-  {{-- <h3 class="my-4">Immagini prodotto</h3>
+  <h3 class="my-4">Immagini prodotto</h3>
 
   <div class="row">
 
@@ -96,7 +96,12 @@
   </div>
  
 
-</div> --}}
+</div>
+
+      
+    
+{{-- <x-footer/>    --}}
+
      
 
 </x-layout>

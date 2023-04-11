@@ -43,10 +43,12 @@
                     @if(Auth::user() && Auth::user()->is_revisor) 
                       <li class="dropdown-item">
                         <a class="text-decoration-none text-black" href="{{ route('revisor.index') }}">Zona Revisore
+                          @if(App\Models\Announcement::toBeRevisionedCount() > 0)
                           <span class="position-absolute top-5 start-55 translate-middle badge rounded-pill bg-danger">
                             {{ App\Models\Announcement::toBeRevisionedCount() }}
                             <span class="visually-hidden text-black">unread messages</span>
                           </span>
+                          @endif
                         </a>
                       </li>
                     @endif

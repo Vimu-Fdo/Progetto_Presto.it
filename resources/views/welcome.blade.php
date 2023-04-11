@@ -8,6 +8,11 @@
         </div>
     @endif
     {{-- Header --}}
+    @if (session()->has('message'))
+                <div class="alert alert-success mt-3">
+                    {{ session('message') }}
+                </div>
+            @endif
     <header class="masthead mt-5">
       <div class="container">
         <div class="row h-100 align-items-center">
@@ -61,7 +66,7 @@
     @endforeach
   </div>
 </div>
-
+<x-footer></x-footer>
 </x-layout>
 
 

@@ -3,7 +3,13 @@
     <div class="container index_announc_title">
       <div class="row align-content-center my-5 h-100">
         <div class="col-12">
-          <h1 class="text-center">Tutti gli annunci</h1>
+          <form class="d-flex" action="{{ route('announcements.search') }}" method="GET">
+            <input name="searched" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button type="submit" class="button-18">
+              <i class="fas fa-search"></i>
+            </button>
+          </form>
+          <h1 class="text-center mt-4">Annunci</h1>
         </div>
       </div>
     </div>
@@ -15,7 +21,7 @@
             <img class="img-fluid rounded mb-2 mb-md-0" src="https://www.typingpal.com/images/1/3/a/8/4/13a845e178cb05ecc149ffc850ad9a6eac19f85d-lorem-ipsum.png" alt="">
           </a>
         </div>
-        <div class="col-md-5 mt-5">
+        <div class="col-md-5 mt-3">
           <h3 class="card-title font-weight-bold py-5">{{ $announcement->title }}</h3>
           <p class="card-text">Descrizione: {{ $announcement->body }}</p>
           <p class="card-text">€ {{ $announcement->price }}</p>
@@ -37,7 +43,7 @@
         {{ $announcements->links() }} {{-- paginazione --}}
       </div>  
   </div>
-  
+ 
 </x-layout>
 
     

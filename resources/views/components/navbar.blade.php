@@ -18,7 +18,7 @@
                 <li><a class="dropdown-item" href="{{ route('categories.show', compact('category')) }}">{{ $category->name }}</a></li>
               @endforeach
             </ul>
-                </li>
+              {{--   </li>
                 @if(Auth::user() && Auth::user()->is_revisor) 
                 <li class="nav-item">
                   <a class="nav-link" href="{{ route('revisor.index') }}">Zona Revisore
@@ -28,7 +28,7 @@
                     </span>
                   </a>
                 </li>
-                @endif
+                @endif --}}
                 <li class="nav-item dropdown text-white-50">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                    @auth 
@@ -39,7 +39,17 @@
                     </a>
                     <ul class="dropdown-menu">
                     @auth
-                      <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    @if(Auth::user() && Auth::user()->is_revisor) 
+                      <li class="dropdown-item">
+                        <a class="text-decoration-none text-black" href="{{ route('revisor.index') }}">Zona Revisore
+                          <span class="position-absolute top-5 start-55 translate-middle badge rounded-pill bg-danger">
+                            {{ App\Models\Announcement::toBeRevisionedCount() }}
+                            <span class="visually-hidden text-black">unread messages</span>
+                          </span>
+                        </a>
+                      </li>
+                    @endif
                         <form method="POST" action="{{ route('logout') }}">
                     @csrf
                       <button class="dropdown-item" type="submit">Logout</button>
@@ -50,15 +60,14 @@
                     @endauth
                     </ul>
                 </li>
-                <form class="d-flex" action="{{ route('announcements.search') }}" method="GET">
-                  <input name="searched" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
+               
             </ul>
         </div>
     </div>
 </nav>
 {{ $slot }}
+
+
 
 {{--
 @auth e middleware 

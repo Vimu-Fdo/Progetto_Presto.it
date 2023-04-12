@@ -28,17 +28,18 @@
             </div>
             @empty
             <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-12 col-md-8">
+                <div class="row  justify-content-center">
+                    <div class="col-12 d-flex flex-column align-items-center">
                         <h2 class="text-center my-4">Non ci sono annunci in questa categoria</h2>
-                        <button class="button-18" role="button" href="{{ route('announcements.create')}}" class="button-18 text-decoration-none">Crea un nuovo annuncio</a></button>
+                        
+                        <button class="button-18" role="button"><a href="{{ route('announcements.create')}}" class="button-18 text-decoration-none">Crea un nuovo annuncio</a></button>
                     </div>
                 </div>
             </div>
             @endforelse
     </div>
 </div>
-<x-footer></x-footer>
+{{-- <x-footer/> --}}
 </x-layout>
 
 {{--

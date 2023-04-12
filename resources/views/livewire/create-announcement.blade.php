@@ -1,5 +1,6 @@
-<x-layout>
-<x-navbar/>
+
+
+
 <div class="container px-5 my-5 py-5">
     <div class="row justify-content-center">
       <div class="col-lg-8">
@@ -77,7 +78,8 @@
       </div>
     </div>
   </div>
-</x-layout>
+
+
 
 
 

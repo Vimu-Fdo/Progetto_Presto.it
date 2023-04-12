@@ -5,20 +5,32 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use App\Models\Category;
 use App\Models\Announcement;
+use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Auth;
 
 class CreateAnnouncement extends Component
 {
+    use WithFileUploads;
+    
     public $title;
     public $body;
+    public $validated;
+    public $temporary_images;
+    public $images = [];
+    public $announcement;
     public $price;
     public $category;
+    
+    
 
     protected $rules = [
         'title' => 'required|min:6',
         'body' => 'required|min:6',
         'price' => 'required|numeric',
         'category' => 'required',
+        'images.*' => 'image|max:1024',
+        'temporary_images.*' => 'image|max:1024',
+
 
     ];
 
@@ -31,19 +43,38 @@ class CreateAnnouncement extends Component
         'price.numeric' => 'Il prezzo deve essere un numero',
     ];
 
+    public function updatedTemporaryImages()
+    {  
+        if ($this->validate([
+            'temporary_images.*' => 'image|max:1024',
+           ])) {
+           foreach ($this->temporary_images as $image) {
+              $this->images[] = $image;
+            }
+        } 
+    }
+    
+    public function removeImage($key)
+    {
+        if (in_array($key, array_keys($this->images))) {
+
+            unset($this->images[$key]);
+        }
+    }
+    
     public function store(){
 
-        $category = Category::find($this->category);
+        $this->validate();
 
-        $announcement = $category->announcements()->create([
-            'title' => $this->title,
-            'body' => $this->body,
-            'price' => $this->price,
+        $this->announcement = Category::find($this->category)->announcements()->create($this->validate());
+        if($this->images){
+            foreach ($this->images as $image) {
+                $this->announcement->images()->create(['path' => $image->store('images', 'public')]);
+            }
+        }
 
-        ]);
-        
-        // serve per salvare l'annuncio nel database e
-        Auth::user()->announcements()->save($announcement);
+        $this->announcement->user()->associate(Auth::user());
+        $this->announcement->save();
    
         
        
@@ -58,6 +89,8 @@ class CreateAnnouncement extends Component
     public function cleanForm(){
         $this->title = '';
         $this->body = '';
+        $this->images = [];
+        $this->temporary_images = [];
         $this->price = '';
         $this->category = '';
 

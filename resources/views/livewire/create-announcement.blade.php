@@ -34,6 +34,7 @@
                             <span class="text-danger text-sm">{{ $message }}</span> 
                         @enderror
               </div>
+
   
               <!-- Price Input -->
               <div class="form-floating mb-3">
@@ -44,7 +45,7 @@
                 @enderror
               </div>
   
-              <!-- Submit success message -->
+              <!-- Category Input -->
               <div class="form-floating mt-3">
                 <select wire:model.defer="category"
                 class="form-select @error('category_id') is-invalid @enderror" 
@@ -58,6 +59,29 @@
                 </select>
                    <label for="category">Scegli la categoria</label>
                 </div>
+
+                <div class="mb-3">
+                    <input wire:model="temporary_images" type="file" name="images" multiple class="form-control @error('temporary_images.*') is-invalid @enderror" placeholder="Inserisci immagini">
+                    @error('temporary_images.*')
+                        <span class="text-danger text-sm">{{ $message }}</span>
+                    @enderror
+                </div>
+                @if (!empty($images))
+                    <div class="row">
+                      <div class="col-12">
+                        <p>Photo Preview</p>
+                        <div class="row border border-4 border-info rounded py-4">
+                          @foreach ($images as $key => $image)
+                             <div class="col my-3">
+                                  <img src="{{ $image->temporaryUrl() }}" class="img-fluid">
+                                 <button type="button" class="btn btn-danger shadow d-block mx-auto mt-2 text-center" wire:click="removeImage({{ $key }})">Cancella</button>
+                             </div> 
+                          @endforeach 
+                        </div>
+                      </div>
+                    </div>
+                @endif
+                      
 
 
         <!-- Submit button -->

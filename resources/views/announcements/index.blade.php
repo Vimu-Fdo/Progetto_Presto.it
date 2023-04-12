@@ -18,7 +18,7 @@
       <div class="row align-content-center h-100">
         <div class="col-md-7">
           <a href="#">
-            <img class="img-fluid rounded mb-2 mb-md-0" src="https://www.typingpal.com/images/1/3/a/8/4/13a845e178cb05ecc149ffc850ad9a6eac19f85d-lorem-ipsum.png" alt="">
+            <img class="img-fluid rounded mb-2 mb-md-0" src="{{!$announcement->images()->get()->isEmpty() ? Storage::url($announcement->images()->first()->path) : 'https://www.typingpal.com/images/1/3/a/8/4/13a845e178cb05ecc149ffc850ad9a6eac19f85d-lorem-ipsum.png'}}" alt="">
           </a>
         </div>
         <div class="col-md-5 mt-3">
@@ -50,7 +50,7 @@
 </x-layout>
 
     
-    
+
 
 
 

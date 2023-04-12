@@ -10,7 +10,7 @@
   
 
     <div class="col-md-8">
-      <img class="img-fluid" src="https://sos-wp.it/wp-content/uploads/2021/04/5-bellissimi-esempi-di-parallasse-orizzontale-rettangolo-min.png" alt="">
+      <img class="img-fluid" src="{{!$announcement->images()->get()->isEmpty() ? Storage::url($announcement->images()->first()->path) : 'https://picsum.photos/200' }}">
     </div>
 
     <div class="col-md-4">

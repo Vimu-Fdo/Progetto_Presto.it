@@ -10,7 +10,7 @@
   
 
     <div class="col-md-8">
-      <img class="img-fluid" src="{{!$announcement->images()->get()->isEmpty() ? Storage::url($announcement->images()->first()->path) : 'https://picsum.photos/200' }}">
+      <img class="img-fluid" src="{{!$announcement->images()->get()->isEmpty() ? $announcement->images()->first()->getUrl(700, 400) : 'https://picsum.photos/200' }}">
     </div>
 
     <div class="col-md-4">

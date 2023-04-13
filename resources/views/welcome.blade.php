@@ -49,7 +49,7 @@
     @foreach ($announcements as $announcement)
     <div class="card mx-auto col-md-3 col-10 px-4 my-4">
       <img class='mx-auto img-thumbnail'
-          src="{{!$announcement->images()->get()->isEmpty() ? Storage::url($announcement->images()->first()->path) : 'https://picsum.photos/200' }}"
+          src="{{!$announcement->images()->get()->isEmpty() ? $announcement->images()->first()->getUrl(300, 300) : 'https://picsum.photos/200' }}"
           width="auto" height="auto">
           <div class="card-body  mx-auto">
             <div class='cvp'>

@@ -6,15 +6,6 @@
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ route('announcement.index') }}">Annunci</a></li>
-                <li>
-                  <x-_locale lang="it" />
-                </li>
-                <li>
-                  <x-_locale lang="en" />
-                </li>
-                <li>
-                  <x-_locale lang="es" />
-                </li>
                 @auth
                 <li class="nav-item"><a class="nav-link" href="{{ route('announcements.create') }}">Crea annuncio</a></li>
                 @endauth
@@ -39,11 +30,12 @@
                 </li>
                 @endif --}}
                 <li class="nav-item dropdown text-white-50">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                    @auth 
-                    Benvenuto {{ Auth::user()->name }}
+                   <i class="fa-solid fa-user" style="color: #e8eaed;"></i>
+                    {{ Auth::user()->name }}
                    @else
-                    Login / Register
+                   <i class="fa-solid fa-user" style="color: #e8eaed;"></i>
                    @endauth
                     </a>
                     <ul class="dropdown-menu">
@@ -70,6 +62,17 @@
                       <li><a class="dropdown-item" href="{{ route('register') }}">Register</a></li>
                     @endauth
                     </ul>
+
+                    <li class="nav-item dropdown">
+                      <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-globe" style="color: #e8eaed;"></i>
+                      </a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#"></a> <x-_locale lang="it" /> </li>
+                        <li><a class="dropdown-item" href="#"></a> <x-_locale lang="en" /> </li>
+                        <li><a class="dropdown-item" href="#"></a> <x-_locale lang="es" /> </li>
+                      </ul>
+                    </li>
                 </li>
                
             </ul>

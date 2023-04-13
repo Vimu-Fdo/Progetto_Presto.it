@@ -1,6 +1,15 @@
 * {
   font-family: 'Space Grotesk', sans-serif;
 }
+
+/* NAVBAR */
+.navbar {
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  
+}
 /* HEADER */
 .box{
   height: 300px;

@@ -45,7 +45,7 @@
       </div>
     </div> --}}
     {{-- Fine Header --}}
-    <h2 class="text-center mt-5 py-5">Articoli in evidenza</h2>
+    <h2 class="text-center mt-5 py-5">{{ __('ui.allAnnouncements') }}</h2>
     @foreach ($announcements as $announcement)
     <div class="card mx-auto col-md-3 col-10 px-4 my-4">
       <img class='mx-auto img-thumbnail'

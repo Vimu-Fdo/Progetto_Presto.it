@@ -6,6 +6,15 @@
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ route('announcement.index') }}">Annunci</a></li>
+                <li>
+                  <x-_locale lang="it" />
+                </li>
+                <li>
+                  <x-_locale lang="en" />
+                </li>
+                <li>
+                  <x-_locale lang="es" />
+                </li>
                 @auth
                 <li class="nav-item"><a class="nav-link" href="{{ route('announcements.create') }}">Crea annuncio</a></li>
                 @endauth

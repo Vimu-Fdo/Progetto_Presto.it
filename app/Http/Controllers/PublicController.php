@@ -23,6 +23,12 @@ class PublicController extends Controller
         return view('announcements.index', compact('announcements'));
 
     }
+
+    public function setLocale($lang) {
+
+        session()->put('locale', $lang);
+        return redirect()->back();
+    }
 }
 
 // Abbiamo inserito la funzione home per mostrare la welcome page.

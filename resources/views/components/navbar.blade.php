@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-dark bgN fixed-top" id="mainNav">
+<nav class="navbar navbar-expand-lg fixed-top" id="myNavbar">
     <div class="container px-4">
-        <a class="navbar-brand" href="{{ route('home') }}">Presto.it</a>
+        <a class="navbar-brand" href="{{ route('home') }}"><img class="logo" src="/Media/logoBlack.png" alt=""></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ms-auto">
@@ -32,10 +32,10 @@
                 <li class="nav-item dropdown text-white-50">
                     <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                    @auth 
-                   <i class="fa-solid fa-user" style="color: #e8eaed;"></i>
+                   <i class="fa-solid fa-user icon" style="color: #000000;"></i>
                     {{ Auth::user()->name }}
                    @else
-                   <i class="fa-solid fa-user" style="color: #e8eaed;"></i>
+                   <i class="fa-solid fa-user icon" style="color: #000000;"></i>
                    @endauth
                     </a>
                     <ul class="dropdown-menu">
@@ -65,7 +65,7 @@
 
                     <li class="nav-item dropdown">
                       <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fa-solid fa-globe" style="color: #e8eaed;"></i>
+                        <i class="fa-solid fa-globe icon" style="color: #000000;"></i>
                       </a>
                       <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#"></a> <x-_locale lang="it" /> </li>

@@ -1,14 +1,38 @@
 <x-layout>
 <x-navbar></x-navbar>
+
+
 <div class='container pad'>
   <div class="row">
     @if (session('access_denied'))
-        <div class="alert alert-danger">
-           {{ session('access_denied') }}
-        </div>
+    <div class="alert alert-danger">
+      {{ session('access_denied') }}
+    </div>
     @endif
     {{-- Header --}}
-    @if (session()->has('message'))
+    
+    <div class="container-fluid">
+      <div class="row d-flex justify-content-center">
+        <div class="col-12 col-md-6">
+          <div class="head1"></div>
+    
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="head2"><h1 class="headTxt">BENVENUTI SU PRESTO.it</h1><br><p>Perché spendere di più? Compra da noi e risparmia!</p> </div>
+          
+          <div class="container-fluid">
+            <div class="row d-flex justify-content-between">
+              
+              <div class="col-6 miniBox1 hashtag"><span>#compra</span></div>
+              <div class="col-6 miniBox2 hashtag"><span>#vendi</span></div>
+
+            </div>            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    {{-- @if (session()->has('message'))
                 <div class="alert alert-success mt-3">
                     {{ session('message') }}
                 </div>
@@ -33,17 +57,8 @@
               </div>
         </div>
       </div>
-    </header>
-   {{--  <div class="container">
-      <div class="row">
-        <div class="col-12 col-md-6">
-          <div class="box1"></div>
-        </div>
-        <div class="col-12 col-md-6">
-          
-        </div>
-      </div>
-    </div> --}}
+    </header> --}}
+   
     {{-- Fine Header --}}
     <h2 class="text-center mt-5 py-5">{{ __('ui.allAnnouncements') }}</h2>
     @foreach ($announcements as $announcement)

@@ -58,8 +58,49 @@
         </div>
       </div>
     </header> --}}
-   
     {{-- Fine Header --}}
+
+    {{-- Sezione categorie --}}
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="text-center mt-5 py-5">Categorie più visitate</h2>
+        </div>
+      </div>
+      <div class="container-fluid">
+      <div class="row justify-content-between">
+        <div class="col-12 col-md-3">
+          <div class="cardcategory d-flex flex-column justify-content-center align-items-center">
+            <i class="fa-solid fa-shirt" style="color: #000000; font-size: 30px;"></i>
+            <a href=" {{ route('categories.show', ['category' => 4]) }} ">Abbigliamento</a>
+          </div>
+        </div>
+        <div class="col-12 col-md-3">
+          <div class="cardcategory d-flex flex-column justify-content-center align-items-center">
+            <i class="fa-solid fa-lightbulb" style="color: #000000; font-size: 30px;"></i>
+            <a href=" {{ route('categories.show', ['category' => 2]) }} ">Elettronica</a>
+          </div>
+        </div>
+        <div class="col-12 col-md-3">
+          <div class="cardcategory d-flex flex-column justify-content-center align-items-center">
+            <i class="fa-solid fa-couch" style="color: #000000; font-size: 30px;"></i>
+            <a href=" {{ route('categories.show', ['category' => 16]) }} ">Arredamento</a>
+          </div>
+        </div>
+        <div class="col-12 col-md-3">
+          <div class="cardcategory d-flex flex-column justify-content-center align-items-center">
+            <i class="fa-solid fa-dumbbell" style="color: #000000; font-size: 30px;"></i>
+            <a href=" {{ route('categories.show', ['category' => 10]) }} ">Sport</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    {{-- Fine Sezione categorie --}}
+
+   
+
+    {{-- Inizio Annunci --}}
     <h2 class="text-center mt-5 py-5">{{ __('ui.allAnnouncements') }}</h2>
     @foreach ($announcements as $announcement)
     <div class="card mx-auto col-md-3 col-10 px-4 my-4">

@@ -19,7 +19,7 @@
               <div class="container">
                 <div class="row">
                   <div class="col-md-9 col-lg-8 mx-auto">
-                    <h1 class="login-heading mb-4">Bentornato!</h1>
+                    <h1 class="login-heading mb-4">{{ __('ui.loginWelcome') }}</h1>
       
                     <!-- Sign In Form -->
                     <form method="POST" action="{{ route('login') }}">
@@ -37,7 +37,7 @@
                             <label for="name">Password</label>
                         </div>
                         <div class="mt-5">
-                            <button class="button-18" type="submit">Accedi</button>
+                            <button class="button-18" type="submit">{{ __('ui.signIn') }}</button>
                         </div>
                     </form>
                   </div>

@@ -9,7 +9,7 @@
               <i class="fas fa-search"></i>
             </button>
           </form>
-          <h1 class="text-center mt-4">Annunci</h1>
+          <h1 class="text-center mt-4">{{ __('ui.announcements') }}</h1>
         </div>
       </div>
     </div>
@@ -23,19 +23,19 @@
         </div>
         <div class="col-md-5 mt-3">
           <h3 class="card-title font-weight-bold py-5">{{ $announcement->title }}</h3>
-          <p class="card-text">Descrizione: {{ $announcement->body }}</p>
+          <p class="card-text">{{ __('ui.description') }}: {{ $announcement->body }}</p>
           <p class="card-text">€ {{ $announcement->price }}</p>
           <p class="card-text">User: {{ $announcement->user->name }}</p>
-          <p class="text-black">Pubblicato il: {{ date_format($announcement->created_at, 'd/m/Y H:i')}}</p>
-          <a class="btn button-18" href="{{ route('announcements.show', compact('announcement')) }}">Visualizza</a>
-          <a class="btn button-18" href="{{ route('categories.show',['category'=>$announcement->category]) }}">Categoria: {{ $announcement->category->name }}</a>
+          <p class="text-black">{{ __('ui.date') }}: {{ date_format($announcement->created_at, 'd/m/Y H:i')}}</p>
+          <a class="btn button-18" href="{{ route('announcements.show', compact('announcement')) }}">{{ __('ui.details') }}</a>
+          <a class="btn button-18" href="{{ route('categories.show',['category'=>$announcement->category]) }}">{{ __('ui.category') }}: {{ $announcement->category->name }}</a>
         </div>
       </div>
       <hr>
       @empty
       <div class="col-12">
         <div class="alert alert-warning py-3 shadow">
-          <p class="lead">Non ci sono annunci per questa ricerca</p>
+          <p class="lead">{{ __('ui.noAnnouncements') }}</p>
         </div>
       </div> 
       @endforelse

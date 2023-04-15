@@ -10,7 +10,7 @@
               <div class="container">
                 <div class="row">
                   <div class="col-md-9 col-lg-8 mx-auto">
-                    <h1 class="login-heading mb-4">Benvenuto!</h1>
+                    <h1 class="login-heading mb-4">{{ __('ui.registerWelcome') }}</h1>
       
                     <!-- Sign In Form -->
                     <form method="POST"  action="{{ route('register') }}">
@@ -47,7 +47,7 @@
                             <label for="name">Password Confirmation</label>
                         </div>
                         <div class="mt-5">
-                            <button class="button-181" type="submit">Registrati</button>
+                            <button class="button-181" type="submit">{{ __('ui.register') }}</button>
                         </div>
                     </form>
                 </div>

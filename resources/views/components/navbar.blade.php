@@ -4,19 +4,19 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarResponsive">
             <ul class="navbar-nav ms-auto d-flex justify-content-center">
-                <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ route('announcement.index') }}">Annunci</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">{{ __('ui.home') }}</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('announcement.index') }}">{{ __('ui.announcements') }}</a></li>
                 @auth
-                <li class="nav-item"><a class="nav-link" href="{{ route('announcements.create') }}">Crea annuncio</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('announcements.create') }}">{{ __('ui.createAnnouncement') }}</a></li>
                 @endauth
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" role="button" id="categoriesDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                Categorie annunci
+                    {{ __('ui.categories') }}
                   </a>
                 
             <ul class="dropdown-menu">
               @foreach ($categories as $category)
-                <li><a class="dropdown-item" href="{{ route('categories.show', compact('category')) }}">{{ $category->name }}</a></li>
+                <li><a class="dropdown-item" href="{{ route('categories.show', compact('category')) }}">{{ $category->name  }}</a></li>
               @endforeach
             </ul>
               {{--   </li>
@@ -41,7 +41,7 @@
                     </a>
                     <ul class="dropdown-menu">
                     @auth
-                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li><a class="dropdown-item" href="#">{{ __('ui.myProfile') }}</a></li>
                     @if(Auth::user() && Auth::user()->is_revisor) 
                       <li class="dropdown-item">
                         <a class="text-decoration-none text-black" href="{{ route('revisor.index') }}">Zona Revisore
@@ -59,8 +59,8 @@
                       <button class="dropdown-item" type="submit">Logout</button>
                         </form>
                     @else
-                      <li><a class="dropdown-item" href="{{ route('login') }}">Login</a></li>
-                      <li><a class="dropdown-item" href="{{ route('register') }}">Register</a></li>
+                      <li><a class="dropdown-item" href="{{ route('login') }}">{{ __('ui.login') }}</a></li>
+                      <li><a class="dropdown-item" href="{{ route('register') }}">{{ __('ui.register') }}</a></li>
                     @endauth
                     </ul>
 

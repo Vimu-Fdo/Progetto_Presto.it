@@ -64,7 +64,7 @@
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <h2 class="text-center mt-5 py-5">Categorie più visitate</h2>
+          <h2 class="text-center mt-5 py-5">{{ __('ui.categoriesmostpopular') }}</h2>
         </div>
       </div>
       <div class="container-fluid">
@@ -72,25 +72,25 @@
         <div class="col-12 col-md-3">
           <div class="cardcategory d-flex flex-column justify-content-center align-items-center">
             <i class="fa-solid fa-shirt" style="color: #000000; font-size: 30px;"></i>
-            <a href=" {{ route('categories.show', ['category' => 4]) }} ">Abbigliamento</a>
+            <a href=" {{ route('categories.show', ['category' => 4]) }} ">{{ __('ui.clothing') }}</a>
           </div>
         </div>
         <div class="col-12 col-md-3">
           <div class="cardcategory d-flex flex-column justify-content-center align-items-center">
             <i class="fa-solid fa-lightbulb" style="color: #000000; font-size: 30px;"></i>
-            <a href=" {{ route('categories.show', ['category' => 2]) }} ">Elettronica</a>
+            <a href=" {{ route('categories.show', ['category' => 2]) }} ">{{ __('ui.electronics') }}</a>
           </div>
         </div>
         <div class="col-12 col-md-3">
           <div class="cardcategory d-flex flex-column justify-content-center align-items-center">
             <i class="fa-solid fa-couch" style="color: #000000; font-size: 30px;"></i>
-            <a href=" {{ route('categories.show', ['category' => 16]) }} ">Arredamento</a>
+            <a href=" {{ route('categories.show', ['category' => 16]) }} ">{{ __('ui.furniture') }}</a>
           </div>
         </div>
         <div class="col-12 col-md-3">
           <div class="cardcategory d-flex flex-column justify-content-center align-items-center">
             <i class="fa-solid fa-dumbbell" style="color: #000000; font-size: 30px;"></i>
-            <a href=" {{ route('categories.show', ['category' => 10]) }} ">Sport</a>
+            <a href=" {{ route('categories.show', ['category' => 10]) }} ">{{ __('ui.sport') }}</a>
           </div>
         </div>
       </div>

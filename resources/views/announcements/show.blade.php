@@ -14,9 +14,9 @@
     </div>
 
     <div class="col-md-4">
-      <h3 class="my-3">Descrizione prodotto</h3>
+      <h3 class="my-3">{{ __('ui.description') }}</h3>
       <p>{{ $announcement->body }}</p>
-      <h3 class="my-3">Dettagli Articolo</h3>
+      <h3 class="my-3">{{ __('ui.details') }}</h3>
       <ul>
         <li>€ {{ $announcement->price }}</li>
         <li>Inserito da: {{ $announcement->user->name }}</li>
@@ -65,7 +65,7 @@
   </div> --}}
 
   <!-- Related Projects Row -->
-  <h3 class="my-4">Immagini prodotto</h3>
+  <h3 class="my-4">{{ __('ui.imgProduct') }}</h3>
 
   <div class="row">
 

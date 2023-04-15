@@ -3,7 +3,7 @@
     <div class="container index_announc_title">
       <div class="row align-content-end h-100">
         <div class="col-12">
-            <h1>{{ $announcement_to_check ? 'Ecco l\'annuncio da revisionare:' : 'Non ci sono annunci da revisionare' }}</h1>
+            <h1>{{ $announcement_to_check ? __('ui.thereAreAnnouncements') : __('ui.noAnnouncements') }}</h1>
         </div>
       </div>
     </div>
@@ -36,12 +36,12 @@
             <form action="{{ route('revisor.accept_announcement', ['announcement'=>$announcement_to_check]) }}" method="POST">
                 @csrf
                 @method('PATCH')
-                <button type="submit" class="btn btn-success shadow">Accetta</button>
+                <button type="submit" class="btn btn-success shadow">{{ __('ui.accept') }}</button>
               </form>
               <form action="{{ route('revisor.reject_announcement', ['announcement'=>$announcement_to_check]) }}" method="POST">
                 @csrf
                 @method('PATCH')
-                <button type="submit" class="btn btn-success shadow ms-3">Rifiuta</button>
+                <button type="submit" class="btn btn-success shadow ms-3">{{ __('ui.reject') }}</button>
               </form>
          </div>
         </div>

@@ -7,8 +7,8 @@
         <div class="card border-0 rounded-3 shadow-lg">
           <div class="card-body p-4">
             <div class="text-center">
-                <h1 class="text-center">Crea Annuncio</h1>
-              <p class="mb-4 text-muted">In questa sezione potrai creare il tuo annuncio con il titolo del prodotto, una descrizione intrigante, il prezzo che vorrai dare al prodotto e in fine selezionare la categoria del prodotto.!</p>
+                <h1 class="text-center">{{ __('ui.createAnnouncement') }}</h1>
+              <p class="mb-4 text-muted">{{ __('ui.descriptionCreate') }}</p>
             </div>
             @if (session()->has('message'))
                 <div class="alert alert-success">
@@ -20,7 +20,7 @@
               <!-- Name Input -->
               <div class="form-floating mb-3">
                 <input wire:model.debounce.500ms="title" class="form-control @error('title') is-invalid @enderror" name="title" id="title" type="text" placeholder="Title"/>
-                <label for="title">Titolo</label>
+                <label for="title">{{ __('ui.title') }}</label>
                 @error('title')
                     <span class="text-danger text-sm">{{ $message }}</span> 
                 @enderror
@@ -29,7 +29,7 @@
               <!-- Descripition input -->
               <div class="form-floating mb-3">
                 <textarea wire:model.debounce.500ms="body" class="form-control @error('body') is-invalid @enderror" name="body" id="body" type="text" placeholder="Description" style="height: 10rem;"></textarea>
-                        <label for="body">Descrizione</label>
+                        <label for="body">{{ __('ui.description') }}</label>
                         @error('body')
                             <span class="text-danger text-sm">{{ $message }}</span> 
                         @enderror
@@ -39,7 +39,7 @@
               <!-- Price Input -->
               <div class="form-floating mb-3">
                 <input wire:model.debounce.500ms="price" class="form-control @error('price') is-invalid @enderror" name="price" id="price" type="text" placeholder="Price"/>
-                <label for="price">Prezzo</label>
+                <label for="price">{{ __('ui.price') }}</label>
                 @error('price')
                     <span class="text-danger text-sm">{{ $message }}</span> 
                 @enderror
@@ -52,12 +52,12 @@
                 {{-- name="category_id" --}}
                 id="category"
                 aria-label="Floating label select example">
-                <option selected>Apri il menu</option>
+                <option selected>{{ __('ui.openMenu')}}</option>
                 @foreach($categories as $category)
                 <option value="{{ $category->id }}">{{ $category->name }}</option>
                 @endforeach
                 </select>
-                   <label for="category">Scegli la categoria</label>
+                   <label for="category">{{ __('ui.categories') }}</label>
                 </div>
 
                 <div class="mb-3">
@@ -86,7 +86,7 @@
 
         <!-- Submit button -->
         <div class="d-grid py-3 justify-content-center">
-            <button class="button-18" id="submitButton" type="submit">Crea Annuncio</button>
+            <button class="button-18" id="submitButton" type="submit">{{ __('ui.createAnnouncement') }}</button>
         </div>
             </form>
            {{-- @else --}}

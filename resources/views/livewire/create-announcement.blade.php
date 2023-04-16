@@ -2,6 +2,11 @@
 
 
 <div class="container px-5 my-5 py-5">
+  @if (session()->has('message'))
+      <div class="alert alert-success">
+          {{ session('message') }}
+      </div>
+  @endif
     <div class="row justify-content-center">
       <div class="col-md-6 img1">
         <div class="headForm"></div>
@@ -13,11 +18,6 @@
                 <h1 class="text-center">{{ __('ui.createAnnouncement') }}</h1>
               <p class="mb-4 text-muted">{{ __('ui.descriptionCreate') }}</p>
             </div>
-            @if (session()->has('message'))
-                <div class="alert alert-success">
-                    {{ session('message') }}
-                </div>
-            @endif
             <form id="contactForm" wire:submit.prevent="store">
               @csrf
               <!-- Name Input -->

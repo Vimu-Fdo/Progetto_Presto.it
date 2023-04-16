@@ -9,6 +9,7 @@
       {{ session('access_denied') }}
     </div>
     @endif
+  </div>
     {{-- Header --}}
     
     <div class="container-fluid">
@@ -114,12 +115,14 @@
       </div>
     </div>
 
+  </div>
+  
+  
+  
+  
+  
+  <x-footer></x-footer>
 
-
-
-
-
-<x-footer></x-footer>
 </x-layout>
 
 

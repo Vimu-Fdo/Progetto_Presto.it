@@ -17,18 +17,18 @@
     @forelse ($announcements as $announcement)
       <div class="row align-content-center h-100">
         <div class="col-md-7">
-          <a href="#">
+          <a href="{{ route('announcements.show', compact('announcement')) }}">{{ __('ui.details') }}>
             <img class="img-fluid rounded mb-2 mb-md-0" src="{{!$announcement->images()->get()->isEmpty() ? Storage::url($announcement->images()->first()->path) : 'https://www.typingpal.com/images/1/3/a/8/4/13a845e178cb05ecc149ffc850ad9a6eac19f85d-lorem-ipsum.png'}}" alt="">
           </a>
         </div>
-        <div class="col-md-5 mt-3">
+        <div class="col-md-5 mt-3 py-3">
           <h3 class="card-title font-weight-bold py-5">{{ $announcement->title }}</h3>
-          <p class="card-text">{{ __('ui.description') }}: {{ $announcement->body }}</p>
+          <a class=" text-black text-decoration-none" href="{{ route('categories.show',['category'=>$announcement->category]) }}">{{ __('ui.category') }}: {{ $announcement->category->name }}</a>
+          <p class="card-text py-2">{{ __('ui.description') }}: {{ $announcement->body }}</p>
           <p class="card-text">€ {{ $announcement->price }}</p>
-          <p class="card-text">User: {{ $announcement->user->name }}</p>
-          <p class="text-black">{{ __('ui.date') }}: {{ date_format($announcement->created_at, 'd/m/Y H:i')}}</p>
-          <a class="btn button-18" href="{{ route('announcements.show', compact('announcement')) }}">{{ __('ui.details') }}</a>
-          <a class="btn button-18" href="{{ route('categories.show',['category'=>$announcement->category]) }}">{{ __('ui.category') }}: {{ $announcement->category->name }}</a>
+         {{--  <p class="card-text">User: {{ $announcement->user->name }}</p> --}}
+         <a class=" button-18 text-decoration-none" href="{{ route('announcements.show', compact('announcement')) }}">{{ __('ui.details') }}</a>
+         <p class="text-black py-5">{{ __('ui.date') }}: {{ date_format($announcement->created_at, 'd/m/Y H:i')}} User:{{ $announcement->user->name }}</p>
         </div>
       </div>
       <hr>

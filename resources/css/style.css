@@ -503,8 +503,36 @@
   width: 280px;
 }
 
+.column1 {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
 
+.larg{
+  width: 400px;
+}
 
+@media screen and (max-width: 600px) {
+  .column1 {
+    width: 50%;
+    display: block;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-right: 2px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .larg {
+    width: 50%;
+    height: 50%;
+    display: block;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-right: 30px;
+  }
+}
 
 @media (min-width: 990px)
 {

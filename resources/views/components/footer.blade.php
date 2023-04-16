@@ -1,6 +1,6 @@
 {{ $slot }}
-<footer class="footer_area section_padding_130_0 text-light bgfoo mt-5 py-5 fixed-bottom ">
-    <div class="container ">
+<footer class="footer_area section_padding_130_0 text-light bgfoo mt-5 py-5  ">
+    <div class="container-fluid ">
       <div class="row">
         <!-- Single Widget-->
         <div class="col-12 col-sm-6 col-lg-4">

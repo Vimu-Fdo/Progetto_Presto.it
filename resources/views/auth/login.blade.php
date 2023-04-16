@@ -1,14 +1,17 @@
 <x-layout>
     <x-navbar></x-navbar>
-    @if ($errors->any())
-            <div class="alert alert-danger my-5">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-    @endif
+   <section class="mt-5">
+    
+      @if ($errors->any())
+              <div class="alert alert-danger mt-5 ">
+                  <ul>
+                      @foreach ($errors->all() as $error)
+                          <li>{{ $error }}</li>
+                      @endforeach
+                  </ul>
+              </div>
+      @endif
+  </section>
     <div class="container-fluid ps-md-0">
         <div class="row g-0">
           <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"> <svg class="svgP" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 800 800" opacity="1"><defs><linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="nnneon-grad"><stop stop-color="hsl(37, 100%, 50%)" stop-opacity="1" offset="0%"></stop><stop stop-color="hsl(272, 99%, 54%)" stop-opacity="1" offset="100%"></stop></linearGradient><filter id="nnneon-filter" x="-100%" y="-100%" width="400%" height="400%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">

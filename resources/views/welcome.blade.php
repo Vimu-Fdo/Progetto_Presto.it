@@ -17,8 +17,8 @@
           <div class="head1"></div>
     
         </div>
-        <div class="col-12 col-md-6">
-          <div class="head2"><h1 class="headTxt">BENVENUTI SU PRESTO.it</h1><br><p>Perché spendere di più? Compra da noi e risparmia!</p> </div>
+        <div class="col-12 col-md-6"> 
+          <div class="head2 py-5"><h1 class="headTxt"> BENVENUTI SU PRESTO.it</h1><br><p class="px-3">Perché spendere di più? Compra da noi e risparmia!</p> </div>
           
           <div class="container-fluid">
             <div class="row d-flex justify-content-between">
@@ -67,31 +67,31 @@
           <h2 class="text-center mt-5 py-5">{{ __('ui.categoriesmostpopular') }}</h2>
         </div>
       </div>
-      <div class="container-fluid">
-      <div class="row justify-content-between">
-        <div class="col-12 col-md-3">
+      <div class="container-fluid  px-5">
+      <a href=" {{ route('categories.show', ['category' => 4]) }} "><div class="row justify-content-between">
+        <div class="col-6 col-md-3 column1 px-5">
           <div class="cardcategory d-flex flex-column justify-content-center align-items-center">
-            <i class="fa-solid fa-shirt" style="color: #000000; font-size: 30px;"></i>
-            <a href=" {{ route('categories.show', ['category' => 4]) }} ">{{ __('ui.clothing') }}</a>
-          </div>
+            <i class="fa-solid fa-shirt py-3" style="color: #000000; font-size: 30px;"></i>
+            <a class="text-decoration-none py-2" style="color: #000000" href=" {{ route('categories.show', ['category' => 4]) }} ">{{ __('ui.clothing') }} </a>
+          </div></a>
         </div>
-        <div class="col-12 col-md-3">
-          <div class="cardcategory d-flex flex-column justify-content-center align-items-center">
-            <i class="fa-solid fa-lightbulb" style="color: #000000; font-size: 30px;"></i>
-            <a href=" {{ route('categories.show', ['category' => 2]) }} ">{{ __('ui.electronics') }}</a>
-          </div>
+        <div class="col-6 col-md-3 column1 px-5">
+          <a href=" {{ route('categories.show', ['category' => 2]) }}"><div class="cardcategory d-flex flex-column justify-content-center align-items-center">
+            <i class="fa-solid fa-lightbulb py-3" style="color: #000000; font-size: 30px;"></i>
+            <a class="text-decoration-none py-2" style="color: #000000" href=" {{ route('categories.show', ['category' => 2]) }} ">{{ __('ui.electronics') }}</a>
+          </div></a>
+        </div> 
+        <div class="col-6 col-md-3 column1 px-5">
+          <a href=" {{ route('categories.show', ['category' => 16]) }}  "><div class="cardcategory d-flex flex-column justify-content-center align-items-center">
+            <i class="fa-solid fa-couch py-3" style="color: #000000; font-size: 30px;"></i>
+            <a class="text-decoration-none py-2" style="color: #000000" href=" {{ route('categories.show', ['category' => 16]) }} ">{{ __('ui.furniture') }}</a>
+          </div></a>
         </div>
-        <div class="col-12 col-md-3">
-          <div class="cardcategory d-flex flex-column justify-content-center align-items-center">
-            <i class="fa-solid fa-couch" style="color: #000000; font-size: 30px;"></i>
-            <a href=" {{ route('categories.show', ['category' => 16]) }} ">{{ __('ui.furniture') }}</a>
-          </div>
-        </div>
-        <div class="col-12 col-md-3">
-          <div class="cardcategory d-flex flex-column justify-content-center align-items-center">
-            <i class="fa-solid fa-dumbbell" style="color: #000000; font-size: 30px;"></i>
-            <a href=" {{ route('categories.show', ['category' => 10]) }} ">{{ __('ui.sport') }}</a>
-          </div>
+        <div class="col-6 col-md-3 column1 px-5">
+          <a href=" {{ route('categories.show', ['category' => 10]) }}  "><div class="cardcategory d-flex flex-column justify-content-center align-items-center">
+            <i class="fa-solid fa-dumbbell py-3" style="color: #000000; font-size: 30px;"></i>
+            <a class="text-decoration-none py-2" style="color: #000000" href=" {{ route('categories.show', ['category' => 10]) }} ">{{ __('ui.sport') }}</a>
+          </div></a>
         </div>
       </div>
     </div>
@@ -103,25 +103,25 @@
     {{-- Inizio Annunci --}}
     <h2 class="text-center mt-5 py-5">{{ __('ui.allAnnouncements') }}</h2>
     @foreach ($announcements as $announcement)
-    <div class="card mx-auto col-md-3 col-10 px-4 my-4">
-      <img class='mx-auto img-thumbnail'
-          src="{{!$announcement->images()->get()->isEmpty() ? $announcement->images()->first()->getUrl(300, 300) : 'https://picsum.photos/200' }}"
-          width="auto" height="auto">
-          <div class="card-body  mx-auto">
-            <div class='cvp'>
-            <p class="card-text fs-6 mt-5"> User: {{ $announcement->user->name }}</p>
-              <h5 class="card-title font-weight-bold">{{ $announcement->title }}</h5>
-              <p class="card-text">€ {{ $announcement->price }}</p>
-              {{-- <p class="card-text">Descrizione: {{ $announcement->body }}</p> --}}
-              <button class="button-18 mt-2" role="button"><a href="{{ route('announcements.show', compact('announcement')) }}" class="button-18 text-white text-decoration-none">Visualizza</a></button><br />
-              <button class="button-181 mt-2" role="button"><a href="{{ route('categories.show',['category'=>$announcement->category]) }}"class="text-white text-decoration-none ">Categoria: {{ $announcement->category->name }}</a></button>
-              <p class="text-black text-decoration-none mb-1 p-3">Pubblicato il: {{ date_format($announcement->created_at, 'd/m/Y H:i')}}</p>
-          </div>
-      </div>
-  </div>
+      <div class="card mx-auto  col-10 mt-5 larg " style="align-items: center"> <a href="{{ route('announcements.show', compact('announcement')) }}" >
+          <img class="mx-auto img-thumbnail"src="{{!$announcement->images()->get()->isEmpty() ? $announcement->images()->first()->getUrl(300, 300) : 'https://picsum.photos/200' }}" width="auto" height="auto">
+              <a href="{{ route('categories.show',['category'=>$announcement->category]) }}"class="text-black text-decoration-none  p-3 ">{{ __('ui.category') }}: {{ $announcement->category->name }}</a>
+              <div class="card-body  mx-auto">
+                <div class='cvp'>
+                  <a href="{{ route('announcements.show', compact('announcement')) }}"  class="text-decoration-none text-black"  ><h5 class="card-title font-weight-bold">{{ $announcement->title }}</h5></a>
+                  <p class="card-text">€ {{ $announcement->price }}</p>
+                  {{-- <p class="card-text">Descrizione: {{ $announcement->body }}</p> --}}
+                 {{--  <p class="text-black text-decoration-none mb-1 p-1">Pubblicato il: {{ date_format($announcement->created_at, 'd/m/Y H:i')}} User:{{ $announcement->user->name }} </p> --}}
+                  {{-- <button class="button-18 mt-2" role="button"><a href="{{ route('announcements.show', compact('announcement')) }}" class="button-18 text-white text-decoration-none">Visualizza Prodotto</a></button><br /> --}}
+                  {{-- <p class="card-text fs-6 px-1"> User: {{ $announcement->user->name }}</p> --}}
+                </div>
+              </div>
+        </div>
     @endforeach
-  </div>
-</div>
+
+
+
+
 <x-footer></x-footer>
 </x-layout>
 

@@ -4,12 +4,12 @@
 <div class="container show_announ">
   <div class="row h-100 align-items-center">
   <!-- Portfolio Item Heading -->
-  <h1 class="my-5">{{$announcement->title}}</h1>
+  <h1 class="my-3">{{$announcement->title}}</h1>
 
   <!-- Portfolio Item Row -->
   
 
-    <div class="col-md-8">
+    <div class="col-md-8" style="align-items: center">
       <img class="img-fluid" src="{{!$announcement->images()->get()->isEmpty() ? $announcement->images()->first()->getUrl(700, 400) : 'https://picsum.photos/200' }}">
     </div>
 
@@ -65,7 +65,7 @@
   </div> --}}
 
   <!-- Related Projects Row -->
-  <h3 class="my-4">{{ __('ui.imgProduct') }}</h3>
+  <h3 class="my-2">{{ __('ui.imgProduct') }}</h3>
 
   <div class="row">
 
@@ -98,11 +98,7 @@
 
 </div>
 
-      
-    
-{{-- <x-footer/>    --}}
 
-     
 
 </x-layout>
 

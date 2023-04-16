@@ -3,9 +3,12 @@
 
 <div class="container px-5 my-5 py-5">
     <div class="row justify-content-center">
-      <div class="col-lg-8">
+      <div class="col-md-6 img1">
+        <div class="headForm"></div>
+      </div>
+      <div class="col-12 col-md-6  d-flex justify-content-center">
         <div class="card border-0 rounded-3 shadow-lg">
-          <div class="card-body p-4">
+          <div class="card-body  p-4">
             <div class="text-center">
                 <h1 class="text-center">{{ __('ui.createAnnouncement') }}</h1>
               <p class="mb-4 text-muted">{{ __('ui.descriptionCreate') }}</p>
@@ -46,7 +49,7 @@
               </div>
   
               <!-- Category Input -->
-              <div class="form-floating mt-3">
+              <div class="form-floating mb-3">
                 <select wire:model.defer="category"
                 class="form-select @error('category_id') is-invalid @enderror" 
                 {{-- name="category_id" --}}
@@ -102,6 +105,22 @@
       </div>
     </div>
   </div>
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
 
 
 

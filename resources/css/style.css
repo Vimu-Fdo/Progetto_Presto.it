@@ -21,9 +21,7 @@
 }
 
 .logo {
-  margin: 0px;
-  padding: 0px;
-  border: 0px;
+  
   height: 30px;
   width: 30px;
   object-fit: cover;
@@ -453,12 +451,13 @@
 }
 
 .card {
-    width: 300px;
+    width: fit-content;
+    
     
 }
 
 .card-body {
-    width: 300px;
+  width: fit-content;
     
 }
 
@@ -472,8 +471,9 @@
 
 .card {
     box-shadow: 0 20px 40px rgba(0, 0, 0, .2);
-    border-radius: 5px;
+    border-radius: 20px !important;
     padding-bottom: 10px;
+    
 }
 
 .carouselD {
@@ -495,6 +495,17 @@
 
 .index_announc_title{
   height: 20vh;
+}
+
+/* Create Anouncement */
+
+.headForm{
+  
+  height: 735px;
+  width: 100%;
+  border-radius: 20px;
+  background-image:
+    linear-gradient(to bottom, rgba(7, 7, 7, 0.359), rgba(25, 25, 25, 0.406)),url(/public/Media/shopping.jpg);
 }
 
 
@@ -526,7 +537,7 @@
   width: 400px;
 }
 
-@media screen and (max-width: 600px) {
+/* @media screen and (max-width: 600px) {
   .column1 {
     width: 50%;
     display: block;
@@ -545,13 +556,19 @@
     margin-top: 20px;
     margin-right: 30px;
   }
-}
+} */
 /* Media query */
 @media only screen and (max-width: 768px) {
   .head1{
     display: none;
   }
 }
+@media only screen and (max-width: 1400px) {
+  .img1{
+    display: none;
+  }
+}
+
 
 
 @media (min-width: 990px)

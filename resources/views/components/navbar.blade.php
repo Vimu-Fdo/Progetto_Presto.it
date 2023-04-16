@@ -3,7 +3,7 @@
         <a class="navbar-brand" href="{{ route('home') }}"><img class="logo" src="/Media/logoBlack.png" alt=""></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse " id="navbarResponsive">
-            <ul class="navbar-nav ms-auto ">
+            <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">{{ __('ui.home') }}</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ route('announcement.index') }}">{{ __('ui.announcements') }}</a></li>
                 @auth
@@ -19,17 +19,8 @@
                 <li><a class="dropdown-item" href="{{ route('categories.show', compact('category')) }}">{{ $category->name  }}</a></li>
               @endforeach
             </ul>
-              {{--   </li>
-                @if(Auth::user() && Auth::user()->is_revisor) 
-                <li class="nav-item">
-                  <a class="nav-link" href="{{ route('revisor.index') }}">Zona Revisore
-                    <span class="position-absolute top-5 start-55 translate-middle badge rounded-pill bg-danger">
-                      {{ App\Models\Announcement::toBeRevisionedCount() }}
-                      <span class="visually-hidden">unread messages</span>
-                    </span>
-                  </a>
-                </li>
-                @endif --}}
+              </li>
+                
                 <li class="nav-item dropdown text-white-50">
                     <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                    @auth 

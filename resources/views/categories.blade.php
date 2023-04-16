@@ -7,7 +7,7 @@
         </div>
     </div>
 </div>
-<div class="container my-5 padUniversale">
+<div class="container my-5">
     <div class="row">
             @forelse ($category->announcements as $announcement)
             <div class="card mx-auto col-md-3 col-10 px-4 my-4">
@@ -27,7 +27,7 @@
                 </div>
             </div>
             @empty
-            <div class="container">
+            <div class="container padUniversale">
                 <div class="row  justify-content-center">
                     <div class="col-12 d-flex flex-column align-items-center">
                         <h2 class="text-center my-4">{{ __('ui.noAnnouncements') }}</h2>

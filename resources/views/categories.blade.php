@@ -7,7 +7,7 @@
         </div>
     </div>
 </div>
-<div class="container my-5">
+<div class="container my-5 padUniversale">
     <div class="row">
             @forelse ($category->announcements as $announcement)
             <div class="card mx-auto col-md-3 col-10 px-4 my-4">
@@ -38,7 +38,7 @@
             @endforelse
     </div>
 </div>
-{{-- <x-footer/> --}}
+<x-footer/>
 </x-layout>
 
 {{--

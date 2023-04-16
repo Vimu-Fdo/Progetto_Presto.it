@@ -21,7 +21,7 @@
      <div class="row">
        @forelse ($announcements as $announcement)
          <div class="card mx-auto  col-10 my-3 larg " style="align-items: center"> <a href="{{ route('announcements.show', compact('announcement')) }}" >
-             <img class="mx-auto img-thumbnail"src="{{!$announcement->images()->get()->isEmpty() ? $announcement->images()->first()->getUrl(300, 300) : 'https://picsum.photos/300' }}" width="auto" height="auto">
+             <img class="mx-auto img-thumbnail bordo"src="{{!$announcement->images()->get()->isEmpty() ? $announcement->images()->first()->getUrl(300, 300) : 'https://picsum.photos/300' }}" width="auto" height="auto">
                  <a href="{{ route('categories.show',['category'=>$announcement->category]) }}"class="text-black text-decoration-none  p-3 ">{{ __('ui.category') }}: {{ $announcement->category->name }}</a>
                  <div class="card-body  mx-auto">
                    <div class='cvp'>

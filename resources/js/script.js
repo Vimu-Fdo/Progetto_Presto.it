@@ -7,7 +7,7 @@ let logo = document.querySelector('.logo');
 
 window.addEventListener('scroll' , () => {
     if (window.scrollY > 0) {
-        myNavbar.style.backgroundColor = "#141414";
+        myNavbar.style.backgroundColor = "#1C2331";
         logo.src = "/Media/logoWhite.png"
         myNavbar.classList.add('shadow')  
         icon.forEach((icon) => {

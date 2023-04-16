@@ -39,8 +39,8 @@ return [
     'openMenu' => 'Abrir menu',
     'categories' => 'Selecciona una categoria',
     'images' => 'Inserta las imagenes del producto',
-    'delete' => 'Eliminar'
-    // Login
+    'delete' => 'Eliminar',
+    //Login
     'loginWelcome' => 'Bienvenido de nuevo!',
     'signIn' => 'Iniciar sesion',
     // Register

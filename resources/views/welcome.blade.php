@@ -18,13 +18,27 @@
     
         </div>
         <div class="col-12 col-md-6"> 
-          <div class="head2 py-5"><h1 class="headTxt"> BENVENUTI SU PRESTO.it</h1><br><p class="px-3">Perché spendere di più? Compra da noi e risparmia!</p> </div>
+          <div class="head2 py-5">
+            <h1 class="text-center"> BENVENUTI SU PRESTO.it</h1>
+            <br>
+            {{-- <p class="px-3">Perché spendere di più? Compra da noi e risparmia!</p>  --}}
+            <div class=" ">
+              <h2 class="fw-light text-center">Sei alla ricerca di qualcosa di unico nel suo genere?</h2>
+              <p class="lead text-center">Su Presto.it troverai tutto cio' che fa al caso tuo!</p>
+              <form class="d-flex justify-content-center" action="{{ route('announcements.search') }}" method="GET">
+                <input name="searched" class="form-control me-2 search" type="search" placeholder="Search" aria-label="Search">
+                <button type="submit" class="button-18">
+                  <i class="fas fa-search"></i>
+                </button>
+              </form>
+            </div>
+          </div>
           
           <div class="container-fluid">
             <div class="row d-flex justify-content-between">
+              <a class="col-6 miniBox1 hashtag" href=""><div ><span class="spanHash">#COMPRA</span></div></a>
+              <a class="col-6 miniBox2 hashtag" href=""><div ><span class="spanHash">#VENDI</span></div></a>
               
-              <div class="col-6 miniBox1 hashtag"><span>#compra</span></div>
-              <div class="col-6 miniBox2 hashtag"><span>#vendi</span></div>
 
             </div>            
           </div>
@@ -104,7 +118,7 @@
     <h2 class="text-center mt-5 py-5">{{ __('ui.allAnnouncements') }}</h2>
     @foreach ($announcements as $announcement)
       <div class="card mx-auto  col-10 mt-5 larg " style="align-items: center"> <a href="{{ route('announcements.show', compact('announcement')) }}" >
-          <img class="mx-auto img-thumbnail"src="{{!$announcement->images()->get()->isEmpty() ? $announcement->images()->first()->getUrl(300, 300) : 'https://picsum.photos/200' }}" width="auto" height="auto">
+          <img class="mx-auto img-thumbnail"src="{{!$announcement->images()->get()->isEmpty() ? $announcement->images()->first()->getUrl(300, 300) : 'https://picsum.photos/300' }}" width="auto" height="auto">
               <a href="{{ route('categories.show',['category'=>$announcement->category]) }}"class="text-black text-decoration-none  p-3 ">{{ __('ui.category') }}: {{ $announcement->category->name }}</a>
               <div class="card-body  mx-auto">
                 <div class='cvp'>

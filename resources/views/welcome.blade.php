@@ -10,8 +10,8 @@
     </div>
     @endif
   </div>
-    {{-- Header --}}
     
+  {{-- Header --}}
     <div class="container-fluid">
       <div class="row d-flex justify-content-center">
         <div class="col-12 col-md-6">
@@ -19,11 +19,11 @@
         </div>
         <div class="col-12 col-md-6"> 
           <div class="head2 py-5">
-            <h1 class="text-center"> BENVENUTI SU PRESTO.it</h1>
+            <h1 class="text-center">{{ __('ui.head2') }}</h1>
             <br>
             <div class=" ">
-              <h2 class="fw-light text-center">Sei alla ricerca di qualcosa di unico nel suo genere?</h2>
-              <p class="lead text-center">Su Presto.it troverai tutto cio' che fa al caso tuo!</p>
+              <h2 class="fw-light text-center">{{ __('ui.head3') }}</h2>
+              <p class="lead text-center">{{ __('ui.head4') }}</p>
               <form class="d-flex justify-content-center" action="{{ route('announcements.search') }}" method="GET">
                 <input name="searched" class="form-control me-2 search" type="search" placeholder="Search" aria-label="Search">
                 <button type="submit" class="button-18">
@@ -34,15 +34,14 @@
           </div>
           <div class="container-fluid">
             <div class="row d-flex justify-content-between">
-              <a class="col-6 miniBox1 hashtag" href="{{ route('announcement.index') }}"><div ><span class="spanHash">#COMPRA</span></div></a>
-              <a class="col-6 miniBox2 hashtag" href="{{ route('announcements.create') }}"><div ><span class="spanHash">#VENDI</span></div></a>
+              <a class="col-6 miniBox1 hashtag" href="{{ route('announcement.index') }}"><div ><span class="spanHash">{{__('ui.head5')}}</span></div></a>
+              <a class="col-6 miniBox2 hashtag" href="{{ route('announcements.create') }}"><div ><span class="spanHash">{{__('ui.head6')}}</span></div></a>
             </div>            
           </div>
         </div>
       </div>
     </div>
-          
-    {{-- Fine Header --}}
+  {{-- Fine Header --}}
               
 
     

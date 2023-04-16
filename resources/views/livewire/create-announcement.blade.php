@@ -64,7 +64,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <input wire:model="temporary_images" type="file" name="images" multiple class="form-control @error('temporary_images.*') is-invalid @enderror" placeholder="Inserisci immagini">
+                    <input wire:model="temporary_images" type="file" name="images" multiple class="form-control @error('temporary_images.*') is-invalid @enderror" placeholder="{{ __('ui.images') }}" />
                     @error('temporary_images.*')
                         <span class="text-danger text-sm">{{ $message }}</span>
                     @enderror
@@ -77,7 +77,7 @@
                           @foreach ($images as $key => $image)
                              <div class="col my-3">
                                   <img src="{{ $image->temporaryUrl() }}" class="img-fluid">
-                                 <button type="button" class="btn btn-danger shadow d-block mx-auto mt-2 text-center" wire:click="removeImage({{ $key }})">Cancella</button>
+                                 <button type="button" class="btn btn-danger shadow d-block mx-auto mt-2 text-center" wire:click="removeImage({{ $key }})">{{ __('ui.delete') }}</button>
                              </div> 
                           @endforeach 
                         </div>

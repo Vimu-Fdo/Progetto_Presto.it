@@ -15,6 +15,12 @@ return [
     'login' => 'Login',
     'register' => 'Registrati',
     'myProfile' => 'Il mio profilo',
+    // Header
+    'head2' => 'BENVENUTI SU PRESTO.it',
+    'head3' => 'Sei alla ricerca di qualcosa di unico nel suo genere?',
+    'head4' => 'Su Presto.it troverai tutto ciò che fa al caso tuo!',
+    'head5' => 'COMPRA',
+    'head6' => 'VENDI',
     // Categories
     'explorecategory' => 'Esplora la categoria:',
     'noAnnouncements' => 'Non ci sono annunci in questa categoria',
@@ -32,6 +38,8 @@ return [
     'price' => 'Prezzo',
     'openMenu' => 'Apri menu',
     'categories' => 'Seleziona una categoria',
+    'images' => 'Insersci le immagini del prodotto',
+    'delete' => 'Elimina',
     // Login
     'loginWelcome' => 'Bentornato!',
     'signIn' => 'Accedi',

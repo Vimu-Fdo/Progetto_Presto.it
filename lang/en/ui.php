@@ -15,6 +15,12 @@ return [
     'login' => 'Login',
     'register' => 'Register',
     'myProfile' => 'My profile',
+    // Header
+    'head2' => 'WELCOME TO PRESTO.it',
+    'head3' => 'Are you looking for something unique in its kind?',
+    'head4' => 'On Presto.it you will find everything you need!',
+    'head5' => 'BUY',
+    'head6' => 'SELL',
     // Categories
     'explorecategory' => 'Explore the category:',
     'noAnnouncements' => 'There are no announcements in this category',
@@ -32,6 +38,8 @@ return [
     'price' => 'Price',
     'openMenu' => 'Open menu',
     'categories' => 'Select a category',
+    'images' => 'Insert the images of the product',
+    'delete' => 'Delete',
     // Login
     'loginWelcome' => 'Welcome back!',
     'signIn' => 'Sign in',

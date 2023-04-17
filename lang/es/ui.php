@@ -1,7 +1,7 @@
 <?php
 return [
     // Home
-    'allAnnouncements' => 'Eccos los nuestros anuncios',
+    'allAnnouncements' => 'Los nuestros anuncios',
     'categoriesmostpopular' => 'Categorias mas populares',
     'clothing' => 'Ropa',
     'electronics' => 'Electronica',

@@ -97,7 +97,7 @@
               <a href="#!" class="text-white">Your Account</a>
             </p>
             <p>
-              <a href="#!" class="text-white">Become an Affiliate</a>
+              <a href="{{ route('become.revisor') }}" class="text-white">Diventa Revisore</a>
             </p>
             <p>
               <a href="#!" class="text-white">Shipping Rates</a>

@@ -1,5 +1,5 @@
 * {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 /* NAVBAR */
@@ -22,8 +22,8 @@
 
 .logo {
   
-  height: 30px;
-  width: 30px;
+  height: 45px;
+  width: 65px;
   object-fit: cover;
 }
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Jobs\GoogleVisionSafeSearch;
 use Livewire\Component;
 use App\Models\Category;
 use App\Jobs\ResizeImage;
@@ -77,6 +78,7 @@ class CreateAnnouncement extends Component
 
                 dispatch(new ResizeImage($newImage->path , 700 , 400 ));
                 dispatch(new ResizeImage($newImage->path , 300 , 300 ));
+                dispatch(new GoogleVisionSafeSearch($newImage->id));
                 
                 
             }

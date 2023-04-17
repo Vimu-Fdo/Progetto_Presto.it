@@ -522,12 +522,12 @@
     text-align: center;
 } */
 
-.carousel{
+/* .carousel{
   height: 400px;
  margin-left: 520px;
  margin-top: 100px;
   width: 280px;
-}
+} */
 
 .column1 {
   float: left;
@@ -621,3 +621,15 @@
 .bordo{
   border-radius: 20px;
 }
+
+@media only screen and (max-width: 768px){
+  .drop-height{
+    height: 300px;
+    overflow: scroll;
+  }
+}
+
+.menu-flag{
+  min-width: 0px !important;
+}
+

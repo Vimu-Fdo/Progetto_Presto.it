@@ -6,7 +6,7 @@
       <div class="col-md-8 d-flex justify-content-center" >
         
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-          @if($announcement->images)
+          @if(count($announcement->images))
             <div class="carousel-inner">
               @foreach ($announcement->images as $image)
                 <div class="carousel-item @if($loop->first) active @endif">

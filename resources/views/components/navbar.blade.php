@@ -4,7 +4,10 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse " id="navbarResponsive">
             <ul class="navbar-nav ms-auto">
+              
+              
                 <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">{{ __('ui.home') }}</a></li>
+              
                 <li class="nav-item"><a class="nav-link" href="{{ route('announcement.index') }}">{{ __('ui.announcements') }}</a></li>
                 @auth
                 <li class="nav-item"><a class="nav-link" href="{{ route('announcements.create') }}">{{ __('ui.createAnnouncement') }}</a></li>
@@ -14,7 +17,7 @@
                     {{ __('ui.categories') }}
                   </a>
                 
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu drop-height">
               @foreach ($categories as $category)
                 <li><a class="dropdown-item" href="{{ route('categories.show', compact('category')) }}">{{ $category->name  }}</a></li>
               @endforeach
@@ -59,10 +62,10 @@
                       <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fa-solid fa-globe icon" style="color: #000000;"></i>
                       </a>
-                      <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#"></a> <x-_locale lang="it" /> </li>
-                        <li><a class="dropdown-item" href="#"></a> <x-_locale lang="en" /> </li>
-                        <li><a class="dropdown-item" href="#"></a> <x-_locale lang="es" /> </li>
+                      <ul class="dropdown-menu menu-flag">
+                        <li><a class="dropdown-item" href="#"><x-_locale lang="it" /></a>  </li>
+                        <li><a class="dropdown-item" href="#"><x-_locale lang="en" /></a>  </li>
+                        <li><a class="dropdown-item" href="#"><x-_locale lang="es" /></a>  </li>
                       </ul>
                     </li>
                 </li>

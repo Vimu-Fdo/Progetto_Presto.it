@@ -2,12 +2,13 @@
 
 namespace App\Http\Livewire;
 
-use App\Jobs\GoogleVisionSafeSearch;
 use Livewire\Component;
 use App\Models\Category;
 use App\Jobs\ResizeImage;
 use App\Models\Announcement;
 use Livewire\WithFileUploads;
+use App\Jobs\GoogleVisionLabelImage;
+use App\Jobs\GoogleVisionSafeSearch;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 
@@ -79,6 +80,7 @@ class CreateAnnouncement extends Component
                 dispatch(new ResizeImage($newImage->path , 700 , 400 ));
                 dispatch(new ResizeImage($newImage->path , 300 , 300 ));
                 dispatch(new GoogleVisionSafeSearch($newImage->id));
+                dispatch(new GoogleVisionLabelImage($newImage->id));
                 
                 
             }

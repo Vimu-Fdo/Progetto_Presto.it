@@ -1,6 +1,6 @@
 <x-layout>
   <x-navbar></x-navbar>
-  <div class="container index_announc_title">
+  <div class="container index_announc_title mt-5">
     <div class="row align-content-center h-100">
       <div class="col-12 col-md-6">
         <h1>{{ $announcement_to_check ? __('ui.thereAreAnnouncements') : __('ui.noAnnouncements') }}</h1>
@@ -98,5 +98,5 @@
       </div>
    </div>
   @endif
-  <x-footer></x-footer>
+  <x-footer/>
 </x-layout>

@@ -65,9 +65,11 @@ class RemoveFaces implements ShouldQueue
 
         }
         $imageAnnotator->close();
-        // $image = SpatieImage::load($srcPath);
-        // $image->watermark('public/Media/logoBlack')
-        //       ->watermarkOpacity(50)
-        //       ->watermarkPosition(Manipulations::POSITION_CENTER);
+        
+        $image = SpatieImage::load($srcPath);
+        $image->watermark(public_path('Media/logoBlack.png'))
+              ->watermarkOpacity(50)
+              ->watermarkPosition(Manipulations::POSITION_CENTER);
+        $image->save($srcPath);
     }
 }

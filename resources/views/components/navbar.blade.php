@@ -29,6 +29,12 @@
                    @auth 
                    <i class="fa-solid fa-user icon" style="color: #000000;"></i>
                     {{ Auth::user()->name }}
+                    @if(App\Models\Announcement::toBeRevisionedCount() > 0)
+                    <span class="position-absolute top-5 start-55 translate-middle badge rounded-pill bg-danger">
+                      {{ App\Models\Announcement::toBeRevisionedCount() }}
+                      <span class="visually-hidden text-black">unread messages</span>
+                    </span>
+                    @endif
                    @else
                    <i class="fa-solid fa-user icon" style="color: #000000;"></i>
                    @endauth
@@ -36,7 +42,7 @@
                     <ul class="dropdown-menu">
                     @auth
                     <li><a class="dropdown-item" href="#">{{ __('ui.myProfile') }}</a></li>
-                    @if(Auth::user() && Auth::user()->is_revisor) 
+                    @if(Auth::user() && Auth::user()->is_revisor )
                       <li class="dropdown-item">
                         <a class="text-decoration-none text-black" href="{{ route('revisor.index') }}">Zona Revisore
                           @if(App\Models\Announcement::toBeRevisionedCount() > 0)

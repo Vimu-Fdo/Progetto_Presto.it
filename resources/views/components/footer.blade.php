@@ -71,16 +71,10 @@
                 style="width: 60px; background-color: #7c4dff; height: 2px"
                 />
             <p>
-              <a href="#!" class="text-white">MDBootstrap</a>
+              <a href="{{ route('announcement.index') }}" class="text-white">{{ __('ui.announcements') }}</a>
             </p>
             <p>
-              <a href="#!" class="text-white">MDWordPress</a>
-            </p>
-            <p>
-              <a href="#!" class="text-white">BrandFlow</a>
-            </p>
-            <p>
-              <a href="#!" class="text-white">Bootstrap Angular</a>
+              <a href="{{ route('announcements.create') }}" class="text-white">{{ __('ui.createAnnouncement') }}</a>
             </p>
           </div>
           <!-- Grid column -->
@@ -94,16 +88,14 @@
                 style="width: 60px; background-color: #822A69; height: 2px"
                 />
             <p>
-              <a href="#!" class="text-white">Your Account</a>
+              <a href="#!" class="text-white">{{ __('ui.myProfile') }}</a>
             </p>
             <p>
-              <a href="{{ route('become.revisor') }}" class="text-white">Diventa Revisore</a>
-            </p>
-            <p>
-              <a href="#!" class="text-white">Shipping Rates</a>
-            </p>
-            <p>
-              <a href="#!" class="text-white">Help</a>
+              @if(Auth::user() && Auth::user()->is_revisor )
+              {{-- Non mostrare il pulsante per diventare revisore --}}
+              @else
+              <a href="{{ route('become.revisor') }}" class="text-white">{{__('ui.becomeRevisor') }}</a>
+              @endif
             </p>
           </div>
           <!-- Grid column -->
@@ -133,7 +125,7 @@
          class="text-center p-3"
          style="background-color: rgba(0, 0, 0, 0.2)"
          >
-      © 2020 Copyright:
+      © 2023 Copyright:
       <a class="text-white" href="https://mdbootstrap.com/"
          >PRESTO.it</a
         >

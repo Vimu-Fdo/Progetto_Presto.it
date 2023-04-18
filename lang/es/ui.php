@@ -43,6 +43,7 @@ return [
     //Login
     'loginWelcome' => 'Bienvenido de nuevo!',
     'signIn' => 'Iniciar sesion',
+    'becomeRevisor' => 'Convertirse en revisor',
     // Register
     'registerWelcome' => 'Bienvenido a nuestro sitio web!',
     'register' => 'Registro',

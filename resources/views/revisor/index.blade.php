@@ -1,13 +1,24 @@
 <x-layout>
   <x-navbar></x-navbar>
+  @if($announcement_to_check)
   <div class="container index_announc_title mt-5">
     <div class="row align-content-center h-100">
       <div class="col-12 col-md-6">
-        <h1>{{ $announcement_to_check ? __('ui.thereAreAnnouncements') : __('ui.noAnnouncements') }}</h1>
+        <h1>{{ __('ui.thereAreAnnouncements')}}</h1>
         
       </div>
     </div>
   </div>
+ @else
+ <div class="container min-vh-100 index_announc_title mt-5">
+  <div class="row align-content-center h-100">
+    <div class="col-12 col-md-6">
+      <h1>{{ __('ui.noAnnouncements')}}</h1>
+      
+    </div>
+  </div>
+</div>
+@endif
  
   
   @if($announcement_to_check)
@@ -98,5 +109,8 @@
       </div>
    </div>
   @endif
+ 
   <x-footer/>
+  
+  
 </x-layout>

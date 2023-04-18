@@ -1,5 +1,5 @@
-{{ $slot }}
-<div class="container-fluid my-5 foot">
+
+<div class="container-fluid  foot">
 
   <!-- Footer -->
   <footer

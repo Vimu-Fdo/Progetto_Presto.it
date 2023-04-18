@@ -1,16 +1,19 @@
 <x-layout>
   <x-navbar></x-navbar>
   <div class="container show_announ">
-    <div class="row h-100 align-items-center">
+    <div class="row align-items-center h-100">
       
-      <div class="col-md-8 d-flex justify-content-center" >
+      <div class="col-md-8" >
         
-        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div id="carouselExampleControls" class="carousel slide carousel-dark" data-bs-ride="carousel">
           @if(count($announcement->images))
             <div class="carousel-inner">
               @foreach ($announcement->images as $image)
                 <div class="carousel-item @if($loop->first) active @endif">
-                  <img src="{{Storage::url($image->path)}}" class="img-fluid p-3" alt="...">
+                  <div class="d-flex justify-content-center">
+
+                    <img src="{{$image->getUrl(400,400)}}" class="img-fluid p-3" alt="...">
+                  </div>
                 </div>
               @endforeach
             </div>
@@ -43,7 +46,7 @@
           <h1 class="my-3">{{$announcement->title}}</h1>
           <h3 class="my-3">{{ __('ui.description') }}</h3>
           <p>{{ $announcement->body }}</p>
-          <h3 class="my-3">{{ __('ui.details') }}</h3>
+          <h3 class="my-3">{{ __('ui.detailsShow') }}</h3>
           <ul>
             <li>€ {{ $announcement->price }}</li>
             <li>Inserito da: {{ $announcement->user->name }}</li>

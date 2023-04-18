@@ -48,7 +48,7 @@ return [
     'register' => 'Register',
     // Show announcement
     'description' => 'Description',
-    'details' => 'Details Article',
+    'detailsShow' => 'Details Article',
     'imgProduct' => 'Images of the product',
     // Index Announcement
     'announcements' => 'Announcements',

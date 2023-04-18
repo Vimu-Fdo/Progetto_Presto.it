@@ -48,8 +48,9 @@ return [
     'register' => 'Registrati',
     // Show announcement
     'description' => 'Descrizione',
-    'details' => 'Dettagli articolo',
+    'detailsShow' => 'Dettagli articolo',
     'imgProduct' => 'Immagini del prodotto',
+
     // Index Announcement
     'announcements' => 'Annunci',
     'description' => 'Descrizione',

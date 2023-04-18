@@ -3,7 +3,8 @@
   <div class="container index_announc_title">
     <div class="row align-content-center h-100">
       <div class="col-12 col-md-6">
-          <h1>{{ $announcement_to_check ? __('ui.thereAreAnnouncements') : __('ui.noAnnouncements') }}</h1>
+        <h1>{{ $announcement_to_check ? __('ui.thereAreAnnouncements') : __('ui.noAnnouncements') }}</h1>
+        
       </div>
     </div>
   </div>
@@ -51,7 +52,7 @@
    
    
    
-    <div class="row">
+    <div class="row mt-5">
         <div class="col-12 col-md-4">
           <h5 class="card-title text-center">Titolo: {{ $announcement_to_check->title }}</h5>
           <p class="text-center">Descrizione: {{ $announcement_to_check->body }}</p>

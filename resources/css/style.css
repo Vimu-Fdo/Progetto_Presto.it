@@ -627,6 +627,10 @@
     height: 300px;
     overflow: scroll;
   }
+  .show_announ{
+    height: 100vh;
+    margin-top: 100px;
+  }
 }
 
 .menu-flag{

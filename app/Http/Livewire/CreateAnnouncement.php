@@ -77,7 +77,7 @@ class CreateAnnouncement extends Component
                 $newFileName = "announcements/{$this->announcement->id}";
                 $newImage = $this->announcement->images()->create(['path' => $image->store($newFileName, 'public')]);
 
-                dispatch(new ResizeImage($newImage->path , 700 , 400 ));
+                dispatch(new ResizeImage($newImage->path , 400 , 400 ));
                 dispatch(new ResizeImage($newImage->path , 300 , 300 ));
                 dispatch(new GoogleVisionSafeSearch($newImage->id));
                 dispatch(new GoogleVisionLabelImage($newImage->id));

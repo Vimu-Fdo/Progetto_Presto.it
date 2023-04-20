@@ -10,7 +10,7 @@
     </div>
     @endif
     @if (session()->has('message'))
-    <div class="alert alert-success mt-4">
+    <div class="alert alert-success mt-5">
         {{ session('message') }}
     </div>
     @endif

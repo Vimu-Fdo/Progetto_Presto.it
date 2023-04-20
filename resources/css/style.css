@@ -560,6 +560,9 @@
   .head1{
     display: none;
   }
+  .card-body{
+    min-width: 200px !important;
+  }
 }
 @media only screen and (max-width: 1400px) {
   .img1{

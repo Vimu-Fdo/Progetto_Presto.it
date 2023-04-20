@@ -72,7 +72,7 @@ class RemoveFaces implements ShouldQueue
               ->watermarkPosition(Manipulations::POSITION_CENTER)
               ->watermarkHeight(20, Manipulations::UNIT_PERCENT)
               ->watermarkWidth(20, Manipulations::UNIT_PERCENT)
-              ->watermarkPadding(20);
+              ->watermarkPadding(30,30,Manipulations::UNIT_PERCENT);
         $image->save($srcPath);
     }
 }

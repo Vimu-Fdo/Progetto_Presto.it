@@ -68,16 +68,16 @@
           <h5 class="card-title text-center">Titolo: {{ $announcement_to_check->title }}</h5>
           <p class="text-center">Descrizione: {{ $announcement_to_check->body }}</p>
           <p class="text-center">Publicato il: {{ $announcement_to_check->created_at->format('d/m/Y') }}</p>
-         <div class="d-flex justify-content-center">
+         <div class="d-flex justify-content-center mb-4">
             <form action="{{ route('revisor.accept_announcement', ['announcement'=>$announcement_to_check]) }}" method="POST">
                 @csrf
                 @method('PATCH')
-                <button type="submit" class="btn btn-success shadow">{{ __('ui.accept') }}</button>
+                <button type="submit" class="button-18">{{ __('ui.accept') }}</button>
               </form>
               <form action="{{ route('revisor.reject_announcement', ['announcement'=>$announcement_to_check]) }}" method="POST">
                 @csrf
                 @method('PATCH')
-                <button type="submit" class="btn btn-success shadow ms-3">{{ __('ui.reject') }}</button>
+                <button type="submit" class="button-18 ms-3">{{ __('ui.reject') }}</button>
               </form>
          </div>
         </div>

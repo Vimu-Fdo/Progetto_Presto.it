@@ -10,22 +10,19 @@
 <div class="container my-5">
     <div class="row">
             @forelse ($category->announcements as $announcement)
-            <div class="card mx-auto col-md-3 col-10 px-4 my-4">
-                <img class='mx-auto img-thumbnail'
-                    src="https://picsum.photos/200/200"
-                    width="auto" height="auto"/>
-                <div class="card-body text-center mx-auto">
-                    <div class='cvp'>
-                        <h5 class="card-title font-weight-bold">{{ $announcement->title }}</h5>
-                        <p class="card-text ml-1 mt-5"> User: {{ $announcement->user->name }}</p>
+            <div class="card mx-auto  col-10 mt-5 larg " style="align-items: center"> <a href="{{ route('announcements.show', compact('announcement')) }}" >
+                <img class="mx-auto img-thumbnail bordo"src="{{!$announcement->images()->get()->isEmpty() ? $announcement->images()->first()->getUrl(300, 300) : 'https://picsum.photos/300' }}" width="auto" height="auto">
+                    <a href="{{ route('categories.show',['category'=>$announcement->category]) }}"class="text-black text-decoration-none  p-3 ">{{ __('ui.category') }}: {{ $announcement->category->name }}</a>
+                    <div class="card-body  mx-auto">
+                      <div class='cvp'>
+                        <a href="{{ route('announcements.show', compact('announcement')) }}"  class="text-decoration-none text-black"  ><h5 class="card-title font-weight-bold">{{ $announcement->title }}</h5></a>
                         <p class="card-text">€ {{ $announcement->price }}</p>
-                        {{-- <p class="card-text">Descrizione: {{ $announcement->body }}</p> --}}
-                        <button class="button-18 mt-2" role="button"><a href="{{ route('announcements.show', compact('announcement')) }}" class="button-18 text-white text-decoration-none">Visualizza</a></button><br />
-                        <button class="button-181 mt-2" role="button"><a href="{{ route('categories.show',['category'=>$announcement->category]) }}"class="text-white text-decoration-none ">Categoria: {{ $announcement->category->name }}</a></button>
-                        <p class="text-black text-decoration-none mb-1 p-3">Pubblicato il: {{ date_format($announcement->created_at, 'd/m/Y H:i')}}</p>
+                        {{-- <p class="card-text">Categoria: {{ $announcement->category->name }}</p> --}}
+
+                        <p class="text-black text-decoration-none mb-1 p-1">Pubblicato il: {{ date_format($announcement->created_at, 'd/m/Y H:i')}} User:{{ $announcement->user->name }} </p>
+                      </div>
                     </div>
-                </div>
-            </div>
+              </div>
             @empty
             <div class="container padUniversale">
                 <div class="row  justify-content-center">

@@ -28,7 +28,7 @@
                      <a href="{{ route('announcements.show', compact('announcement')) }}"  class="text-decoration-none text-black"  ><h5 class="card-title font-weight-bold">{{ $announcement->title }}</h5></a>
                      <p class="card-text">€ {{ $announcement->price }}</p>
                      {{-- <p class="card-text">Descrizione: {{ $announcement->body }}</p> --}}
-                    {{--  <p class="text-black text-decoration-none mb-1 p-1">Pubblicato il: {{ date_format($announcement->created_at, 'd/m/Y H:i')}} User:{{ $announcement->user->name }} </p> --}}
+                     <p class="text-black text-decoration-none mb-1 p-1">Pubblicato il: {{ date_format($announcement->created_at, 'd/m/Y H:i')}} User:{{ $announcement->user->name }} </p>
                      {{-- <button class="button-18 mt-2" role="button"><a href="{{ route('announcements.show', compact('announcement')) }}" class="button-18 text-white text-decoration-none">Visualizza Prodotto</a></button><br /> --}}
                      {{-- <p class="card-text fs-6 px-1"> User: {{ $announcement->user->name }}</p> --}}
                    </div>
